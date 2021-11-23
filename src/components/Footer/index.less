@@ -1,0 +1,64 @@
+@import '~themes/global.less';
+
+.footer {
+  margin-top: 160px;
+  padding: 40px 0 55px 0;
+  background: #fff;
+  z-index: 9999;
+  position: relative;
+
+  .footerTitle {
+    color: @theme-color;
+    font-size: 18px;
+    font-family: @dabacus-font-medium;
+  }
+
+  a {
+    display: block;
+    color: #000;
+    margin: 8px 0;
+
+    &:hover {
+      color: #aab0b8;
+    }
+  }
+  .footerSocial {
+    li {
+      padding: 0 6px;
+      display: inline-block;
+      img {
+        width: 48px;
+      }
+    }
+  }
+  .logoImg {
+    margin-top: 79px;
+    width: 40px;
+  }
+
+  .socialLinks {
+    padding-left: 72px;
+
+    img {
+      width: 48px;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .footer {
+    padding: 0 24px;
+
+    .socialLinks {
+      padding-left: 0;
+      padding-right: 72px;
+      margin-top: 48px;
+      margin-left: -10px;
+    }
+
+    .logoImg {
+      margin-top: 32px;
+      margin-bottom: 40px;
+    }
+  }
+}
