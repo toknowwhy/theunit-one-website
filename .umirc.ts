@@ -15,11 +15,20 @@ export default defineConfig({
     antd: true,
     baseNavigator: true,
   },
+  theme: {
+    'primary-color': '#5956FF',
+    'font-family': 'Avenir',
+    'font-size-base': '16px',
+  },
   routes: [
     {
       path: '/',
       component: '@/layouts/MainLayout',
-      routes: [{ path: '/', component: '@/pages/index' }],
+      routes: [
+        { path: '/', component: '@/pages/index' },
+        { path: '/about', component: '@/pages/About' },
+        { path: '/faq', component: '@/pages/FAQ' },
+      ],
     },
   ],
   fastRefresh: {},

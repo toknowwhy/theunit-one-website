@@ -44,24 +44,19 @@ const Header: React.FC = () => {
         >
           <SubMenu key="applications" title="Index">
             <Menu.Item key="products:2">
-              <Link to="/app/index">
-                <span className="menu-item-span">The Unit</span>
+              <Link to={Links.appUrl}>
+                <span className="menu-item-span">Enter App</span>
               </Link>
             </Menu.Item>
             <Menu.Item key="products:1">
               <a href={Links.unitPaperUrl} target="_blank">
-                <span className="menu-item-span">The Unit White Paper</span>
+                <span className="menu-item-span">White Paper</span>
               </a>
             </Menu.Item>
             <Menu.Item key="products:4">
               <a href={Links.graphUrl} target="_blank">
                 <span className="menu-item-span">The Unit API</span>
               </a>
-            </Menu.Item>
-            <Menu.Item key="products:3">
-              <Link to="/app/swap">
-                <span className="menu-item-span">Swap</span>
-              </Link>
             </Menu.Item>
           </SubMenu>
           <SubMenu key="developers" title="Developers">
@@ -80,21 +75,16 @@ const Header: React.FC = () => {
                 <span className="menu-item-span">Github</span>
               </a>
             </Menu.Item>
+            <Menu.Item key="developers:2">
+              <Link to="/jobs">
+                <span className="menu-item-span">Jobs</span>
+              </Link>
+            </Menu.Item>
           </SubMenu>
           <SubMenu key="learn" title="Learn">
             <Menu.Item key="about">
               <Link to="/about">
                 <span className="menu-item-span">About</span>
-              </Link>
-            </Menu.Item>
-            <Menu.Item key="philosophy">
-              <a href={Links.valuesUrl} target="_blank">
-                <span className="menu-item-span">2ØY's Values</span>
-              </a>
-            </Menu.Item>
-            <Menu.Item key="glossary">
-              <Link to="/glossary">
-                <span className="menu-item-span">Glossary</span>
               </Link>
             </Menu.Item>
             <Menu.Item key="faq">
@@ -104,11 +94,6 @@ const Header: React.FC = () => {
             </Menu.Item>
           </SubMenu>
           <SubMenu key="community" title="Community">
-            <Menu.Item key="announcements">
-              <Link to="/announcements">
-                <span className="menu-item-span">Announcements</span>
-              </Link>
-            </Menu.Item>
             <Menu.Item key="community:1">
               <a href={Links.twitterUrl} target="_blank">
                 <span className="menu-item-span">Twitter</span>
@@ -127,6 +112,11 @@ const Header: React.FC = () => {
             <Menu.Item key="community:4">
               <a href={Links.forumUrl} target="_blank">
                 <span className="menu-item-span">Forum</span>
+              </a>
+            </Menu.Item>
+            <Menu.Item key="community:5">
+              <a href={Links.youtubeUrl} target="_blank">
+                <span className="menu-item-span">Youtube</span>
               </a>
             </Menu.Item>
           </SubMenu>

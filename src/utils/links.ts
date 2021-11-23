@@ -16,3 +16,4 @@ export const snapshotUrl = 'https://snapshot.org/#/shuajj.eth';
 export const resourcesUrl = `${githubBaseUrl}/the-blocktree-resources-paper/blob/main/the-blocktree-resources-paper.pdf`;
 export const siteUrl = 'https://theunit.one';
 export const graphUrl = 'https://graph.theunit.one';
+export const appUrl = 'https://app.theunit.one';

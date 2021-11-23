@@ -51,3 +51,34 @@ export const getFeatures = () => {
     },
   ];
 };
+
+export type FAQType = {
+  title: string;
+  answer: string;
+};
+
+export const getFaqs = () => {
+  const intl = useIntl();
+  return [
+    {
+      title: intl.formatMessage({ id: 'faq1Title' }),
+      answer: intl.formatMessage({ id: 'faq1Answer' }),
+    },
+    {
+      title: intl.formatMessage({ id: 'faq2Title' }),
+      answer: intl.formatMessage({ id: 'faq2Answer' }),
+    },
+    {
+      title: intl.formatMessage({ id: 'faq3Title' }),
+      answer: intl.formatMessage({ id: 'faq3Answer' }),
+    },
+    {
+      title: intl.formatMessage({ id: 'faq4Title' }),
+      answer: intl.formatMessage({ id: 'faq4Answer' }),
+    },
+    {
+      title: intl.formatMessage({ id: 'faq5Title' }),
+      answer: intl.formatMessage({ id: 'faq5Answer' }),
+    },
+  ];
+};
