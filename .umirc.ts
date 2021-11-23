@@ -10,6 +10,11 @@ export default defineConfig({
     layouts: resolve(__dirname, './src/layouts'),
     themes: resolve(__dirname, './src/themes'),
   },
+  locale: {
+    default: 'en-US',
+    antd: true,
+    baseNavigator: true,
+  },
   routes: [
     {
       path: '/',
