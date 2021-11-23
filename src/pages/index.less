@@ -1,5 +1,10 @@
 @import '~themes/global.less';
 
+.pageContainer {
+  background-image: url(../assets/bgd-img.png);
+  background-size: cover;
+}
+
 .title {
   font-family: @dabacus-font-heavy;
   font-size: 64px;
@@ -15,14 +20,6 @@
 .topCharts {
   margin-top: 30px;
   padding-right: 120px;
-}
-
-.bgdImg {
-  position: absolute;
-  z-index: -1;
-  left: 10%;
-  top: 360px;
-  width: 76%;
 }
 
 .p {
@@ -60,26 +57,6 @@
   height: 265px;
   margin-right: 0;
 }
-.firstLine {
-  width: 302px;
-  position: relative;
-  left: 50%;
-  margin-top: 15px;
-}
-.secondLine {
-  width: 636px;
-  margin: 0 auto;
-  display: block;
-  margin-bottom: 30px;
-}
-.thirdLine {
-  width: 302px;
-  position: relative;
-  left: 50%;
-  margin-top: 15px;
-  margin-left: -302px;
-  margin-bottom: 30px;
-}
 .features {
   margin-top: 100px;
   padding: 0 100px;
@@ -100,37 +77,6 @@
   font-family: @dabacus-font-medium;
   font-size: 18px;
 }
-.halfFeatureWrapper {
-  max-width: 457px;
-  margin: 0 auto;
-  text-align: right;
-}
-.halfFeatureWrapperLeft {
-  max-width: 457px;
-  margin: 0 auto;
-  text-align: left;
-  margin-bottom: 24px;
-}
-.subtitleLeft {
-  margin-bottom: 24px;
-}
-
-.featureGif {
-  width: 100%;
-
-  &.topGif {
-    width: 130%;
-    margin-top: 80px;
-    margin-left: -20%;
-    z-index: -1;
-    position: relative;
-  }
-
-  &.bottomGif {
-    width: 90%;
-    margin-top: -65px;
-  }
-}
 
 .showOnlyOnMobile {
   display: none;
@@ -139,7 +85,7 @@
 .communityTitle {
   width: 100%;
   text-align: center;
-  margin-bottom: 48px;
+  margin: 128px 0 48px 0;
 }
 
 .homeSubtitle {
@@ -203,13 +149,6 @@
     font-size: 16px;
     line-height: 19px;
     text-align: center;
-  }
-
-  .featureGif {
-    &.bottomGif {
-      width: 100%;
-      margin-top: 0px;
-    }
   }
 
   .bgdImg {

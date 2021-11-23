@@ -28,6 +28,7 @@ export default defineConfig({
         { path: '/', component: '@/pages/index' },
         { path: '/about', component: '@/pages/About' },
         { path: '/faq', component: '@/pages/FAQ' },
+        { path: '/jobs', component: '@/pages/Jobs' },
       ],
     },
   ],
