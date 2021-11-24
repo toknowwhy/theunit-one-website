@@ -1,6 +1,6 @@
-@import '../../global.less';
+@import '~themes/global.less';
 
-.faq-title {
+.title {
   font-family: @dabacus-font-heavy;
   font-size: 36px;
   line-height: 36px;
@@ -8,114 +8,81 @@
   margin-bottom: 120px;
 }
 
-.buttons-row .ant-btn-text:hover,
-.buttons-row .ant-btn-text:focus {
-  background: none;
+.bgdImage {
+  height: 66px;
+  width: 100%;
 }
 
-.slick-slider {
-  .slick-slide {
-    position: relative;
+.events {
+  .indicator {
+    position: absolute;
+    width: 43px;
+    height: 248px;
+    left: 36%;
+  }
 
-    img {
-      height: 66px;
+  .allEvents {
+    margin-left: 48%;
+    text-align: left;
+
+    h2 {
+      font-family: @dabacus-font-heavy;
+      font-size: 22px;
+      color: @theme-color;
+      width: 230px;
     }
 
-    .events {
-      img.indicator {
+    p {
+      font-family: @dabacus-font-medium;
+      width: 277px;
+      line-height: 19px;
+      margin-top: 0;
+      margin-bottom: 16px;
+      position: relative;
+      padding-left: 12px;
+
+      &:before {
+        content: '\A';
+        width: 4px;
+        height: 4px;
+        border-radius: 50%;
+        background: #000;
         position: absolute;
-        width: 43px;
-        height: 248px;
-        left: 36%;
-      }
-
-      .all-events {
-        margin-left: 48%;
-        text-align: left;
-
-        h2 {
-          font-family: @dabacus-font-heavy;
-          font-size: 22px;
-          color: @theme-color;
-          width: 230px;
-        }
-
-        p {
-          font-family: @dabacus-font-medium;
-          width: 277px;
-          line-height: 19px;
-          margin-top: 0;
-          margin-bottom: 16px;
-          position: relative;
-          padding-left: 12px;
-
-          &:before {
-            content: '\A';
-            width: 4px;
-            height: 4px;
-            border-radius: 50%;
-            background: #000;
-            position: absolute;
-            top: 7px;
-            left: 0;
-          }
-        }
+        top: 7px;
+        left: 0;
       }
     }
   }
 }
 
 .events,
-.empty-div {
+.empty {
   height: 220px;
 }
 
-.buttons-row {
-  margin-top: 120px;
+.dot {
+  color: #70707c;
+  cursor: pointer;
+  margin: 120px 30px;
+  display: inline-block;
+  font-family: @dabacus-font-heavy;
+  font-size: 18px;
 
-  .ant-btn-text {
-    font-family: @dabacus-font-heavy;
-    color: #aab0b8;
-
-    &.active {
-      color: #000;
-    }
-
-    &:focus {
-      background: none;
-    }
-  }
-
-  .ant-col {
-    text-align: center;
+  &.active {
+    color: #090909;
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .slick-slider {
-    .slick-slide {
-      img {
-        width: 100%;
-      }
+@media only screen and (max-width: 1023px) {
+  .events {
+    .indicator {
+      bottom: 0px;
+      left: 12%;
+    }
 
-      .events {
-        img.indicator {
-          left: 33%;
-          top: 3px;
-        }
-
-        .all-events {
-          margin-left: 45%;
-
-          p {
-            width: 100%;
-          }
-
-          h2 {
-            width: 100%;
-          }
-        }
-      }
+    .allEvents {
+      margin-left: 24%;
+      padding-top: 44px;
     }
   }
 }

@@ -82,3 +82,34 @@ export const getFaqs = () => {
     },
   ];
 };
+
+export interface TimelineType {
+  time?: string;
+  events?: Array<string>;
+}
+
+export const timelines: Array<TimelineType> = [
+  {},
+  { time: '2019 - February', events: ['Idea Ignition'] },
+  {},
+  {
+    time: '2021 - May - 5 (5-5-5)',
+    events: ['Launch of The Unit v0.1.0', 'Launch of theunit.one'],
+  },
+  { time: '2021 - October', events: ['Launch of The Unit governance token'] },
+  { time: '2021 - November', events: ['Launch of 2ØY'] },
+  { time: '2022 - January', events: ['The Blocktree Testnet Launch'] },
+  {
+    time: '2022 - June - 6 (6-6-6)',
+    events: [
+      'The Blocktree Aleph-Zero Mainnet Launch, Blocktree Genesis Block',
+    ],
+  },
+  {},
+  {},
+  {
+    time: '2023 - July - 7 (7-7-7)',
+    events: ['Layer 2 Launch (Edge-dApps Portal)'],
+  },
+  {},
+];

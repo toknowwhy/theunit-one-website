@@ -75,7 +75,7 @@ const Header: React.FC = () => {
                 <span className="menu-item-span">Github</span>
               </a>
             </Menu.Item>
-            <Menu.Item key="developers:2">
+            <Menu.Item key="developers:3">
               <Link to="/jobs">
                 <span className="menu-item-span">Jobs</span>
               </Link>

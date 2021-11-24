@@ -4,6 +4,7 @@ import { Row, Col } from 'antd';
 import { Link } from 'umi';
 import { getFeatures, FeatureType } from '@/utils/constants';
 import { Fade } from 'react-awesome-reveal';
+import { appUrl } from '@/utils/links';
 import JoinCommunity from '@/components/JoinCommunity';
 import styles from './index.less';
 
@@ -33,9 +34,9 @@ export default function IndexPage() {
               <strong>index</strong> tied to global population data, The Unit,
               aims to become the unit of account of the Metarverse.
             </p>
-            <Link to="/app/index">
-              <ThemeButton>The Unit</ThemeButton>
-            </Link>
+            <a href={appUrl}>
+              <ThemeButton>Enter App</ThemeButton>
+            </a>
           </div>
         </Col>
         <Col xs={24} sm={24} md={12}>
