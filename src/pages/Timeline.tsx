@@ -27,6 +27,8 @@ export default (): React.ReactNode => {
     showButtons = false;
   }
 
+  const handleDragStart = (e) => e.preventDefault();
+
   const items = allItems.map((obj: TimelineType, index: number) => {
     if (obj.time && obj.events) {
       return (
@@ -35,6 +37,7 @@ export default (): React.ReactNode => {
             <img
               className={styles.indicator}
               src={index < 2 ? indicatorImg : indicatorEmptyImg}
+              onDragStart={handleDragStart}
             />
             <div className={styles.allEvents}>
               <h2>{obj.time}</h2>
@@ -43,14 +46,22 @@ export default (): React.ReactNode => {
               ))}
             </div>
           </div>
-          <img className={styles.bgdImage} src={pathImg} />
+          <img
+            className={styles.bgdImage}
+            src={pathImg}
+            onDragStart={handleDragStart}
+          />
         </div>
       );
     } else {
       return (
         <div key={index}>
           <div className={styles.empty}></div>
-          <img className={styles.bgdImage} src={pathImg} />
+          <img
+            className={styles.bgdImage}
+            src={pathImg}
+            onDragStart={handleDragStart}
+          />
         </div>
       );
     }
@@ -74,7 +85,6 @@ export default (): React.ReactNode => {
       <AliceCarousel
         mouseTracking
         disableButtonsControls
-        disableDotsControls={showButtons}
         items={items}
         responsive={responsive}
         renderDotsItem={renderDotsItem}
