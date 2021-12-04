@@ -15,10 +15,15 @@ export default defineConfig({
     antd: true,
     baseNavigator: true,
   },
+  antd: {
+    dark: true,
+  },
   theme: {
     'primary-color': '#5956FF',
+    'body-background': '#000',
     'font-family': 'Avenir',
-    'font-size-base': '16px',
+    'font-size-base': '18px',
+    'text-color': '#F5F5FF',
   },
   routes: [
     {

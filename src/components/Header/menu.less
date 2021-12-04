@@ -1,183 +1,86 @@
 @import '~themes/global.less';
 
-.ant-menu-vertical {
-  .ant-menu-item {
-    padding: 0 12px;
-  }
+.ant-layout-header {
+  background: rgba(9, 9, 9, 0.6);
+  backdrop-filter: blur(24px);
 }
 
-.ant-menu-vertical.ant-menu-sub {
-  padding-top: 12px;
-  padding-bottom: 16px;
+.ant-menu {
+  background: none;
+  line-height: 25px;
+  color: #70707c;
 }
 
-.ant-menu-vertical .ant-menu-item:not(:last-child) {
-  margin-bottom: 12px;
+.ant-menu-horizontal {
+  border-bottom: none;
 }
 
-.ant-menu-vertical > .ant-menu-item {
-  line-height: 16px;
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-active,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu:hover,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-active,
+.ant-menu-light .ant-menu-submenu-title:hover {
+  color: @text-color;
 }
 
-.ant-menu-submenu {
-  border-bottom: none !important;
-  font-family: @dabacus-font-medium;
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-active::after,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu:hover::after,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu::after {
+  display: none;
+}
+
+.ant-menu-inline .ant-menu-item-selected::after,
+.ant-menu-horizontal .ant-menu-submenu {
+  border: none;
+}
+
+.ant-menu-item a {
+  color: #70707c;
 
   &:hover {
-    border-bottom: none !important;
+    color: @text-color;
   }
+}
 
-  .ant-menu {
-    box-shadow: 0px 0px 12px rgba(19, 27, 105, 0.1) !important;
-    border-radius: 8px !important;
-    color: #656a71;
-  }
+.ant-menu-item.ant-menu-item-selected a {
+  color: @text-color;
+}
 
-  .ant-menu-item {
-    height: 24px;
-    margin-bottom: 0;
+.ant-menu-submenu-popup > .ant-menu {
+  background-color: transparent;
+}
 
-    &:focus,
-    &:active {
-      background: none;
+.ant-menu-vertical .ant-menu-item {
+  padding: 0;
+
+  a {
+    position: relative;
+    padding-bottom: 8px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      transform: scaleX(0);
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: #fff;
+      transform-origin: bottom right;
+      transition: transform 0.25s ease-out;
     }
 
-    a {
-      color: #656a71;
-      padding: 0;
-      margin: 0;
+    &:hover:after {
+      transform: scaleX(1);
+      transform-origin: bottom left;
     }
-
-    &.ant-menu-item-selected {
-      background: none;
-
-      a {
-        color: #000;
-        font-family: @dabacus-font-medium;
-      }
-    }
-  }
-
-  .menu-item-span {
-    display: block;
-    padding: 4px 8px;
-    border-radius: 4px;
-  }
-
-  .ant-menu-item:hover {
-    color: #656a71;
-
-    .menu-item-span {
-      background: #f9f9f9;
-    }
-  }
-
-  .ant-menu-item-selected {
-    font-family: @dabacus-font-medium;
-    color: #000;
 
     &:hover {
-      color: #000;
+      color: #fff;
     }
   }
 }
 
-.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu {
-  margin-left: 36px;
-  margin-right: 36px;
-}
-
-.ant-menu-horizontal:not(.ant-menu-dark) {
-  border-bottom: none !important;
-
-  .ant-menu-item:hover {
-    border-bottom: none !important;
-  }
-}
-
-.ant-menu-horizontal > .ant-menu-item {
-  border-bottom: none !important;
-}
-
-.ant-menu-horizontal:not(.ant-menu-dark)
-  > .ant-menu-submenu-selected.language-menu {
-  color: #000;
-
-  .ant-menu-submenu-title {
-    img {
-      margin-top: -3px;
-    }
-
-    span {
-      margin-left: 4px;
-    }
-  }
-}
-
-.ant-menu-horizontal > .ant-menu-submenu.hide-app,
-.ant-menu-horizontal > .ant-menu-item.hide-app,
-a.hide-app {
-  display: none;
-}
-
-.ant-menu-horizontal > .ant-menu-item.hide-other {
-  display: none;
-
-  &.show-app {
-    display: inline-block;
-  }
-}
-
-.language-popup .ant-menu-vertical.ant-menu-sub {
-  min-width: 100px;
-}
-
-.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item:hover::after,
-.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu:hover::after,
-.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-active::after,
-.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-active::after,
-.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-open::after,
-.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-open::after,
-.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-selected::after,
-.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-selected::after {
-  border: none !important;
-  transition: none !important;
-  border-color: #fff !important;
-}
-
-@media only screen and (max-width: 768px) {
-  a.hide-app.show-app-mobile {
-    display: inline-block;
-
-    img {
-      width: 32px;
-      margin-top: 13px;
-    }
-  }
-
-  .ant-menu-horizontal:not(.ant-menu-dark)
-    > .ant-menu-submenu-selected.language-menu {
-    .ant-menu-submenu-title {
-      margin-right: 8px;
-      line-height: 38px;
-      font-size: 14px;
-
-      img {
-        width: 18px;
-      }
-    }
-  }
-
-  .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu,
-  .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item {
-    margin-left: 8px;
-    margin-right: 8px;
-  }
-
-  .connectWalletContainer {
-    .ant-popover-inner {
-      padding: 8px;
-      border-radius: 8px;
-    }
-  }
+.ant-menu-submenu-popup > .ant-menu {
+  box-shadow: none;
+  border: none;
 }

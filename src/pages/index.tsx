@@ -7,56 +7,65 @@ import { Fade } from 'react-awesome-reveal';
 import { appUrl } from '@/utils/links';
 import JoinCommunity from '@/components/JoinCommunity';
 import styles from './index.less';
+import enterApp from '@/assets/enter-app.svg';
+import table from '@/assets/table.png';
 
 export default function IndexPage() {
   const features = getFeatures();
   return (
-    <PageContainer className={styles.pageContainer}>
-      <Row className={styles.halfFeature} align="middle">
-        <Col xs={24} sm={24} md={12}>
-          <div className={styles.halfFeatureWrapperLeft}>
-            <div className={styles.subtitle}>
-              The Unit: <br />A crypto-native
-              <br />
-              <span className={styles.titleSpan}> Unit </span>
-              of Account
-            </div>
-            <p
-              className={
-                styles.subtitleDesc +
-                ' ' +
-                styles.subtitleLeft +
-                ' ' +
-                styles.homeSubtitle
-              }
-            >
-              Our comprehensive community-managed crypto-native{' '}
-              <strong>index</strong> tied to global population data, The Unit,
-              aims to become the unit of account of the Metarverse.
-            </p>
-            <a href={appUrl}>
-              <ThemeButton>Enter App</ThemeButton>
-            </a>
+    <PageContainer>
+      <Row className={styles.top} align="middle">
+        <Col xs={24} sm={24} md={10}>
+          <div className={styles.title}>
+            <span className={styles.themeSpan}>The Unit</span> <br />
+            Crypto-Native
+            <br />
+            Benchmark
           </div>
+          <div className={styles.subtitle}>
+            USD is hyperinflating. Why does crypto still depend on USD as
+            benchmark?
+          </div>
+          <a href={appUrl}>
+            <img src={enterApp} />
+          </a>
         </Col>
-        <Col xs={24} sm={24} md={12}>
-          <div className={styles.topChart}></div>
+        <Col xs={24} sm={24} md={14} className={styles.chart}>
+          <iframe src="http://localhost:8000/iframe" />
         </Col>
       </Row>
 
+      <div className={styles.unitDesc}>
+        The Unit is the decentralized, community-managed and crypto-native
+        benchmark for both consumers and investors in the metaverse.
+      </div>
+
       <Fade direction="up" cascade triggerOnce>
-        <Row className={styles.features} gutter={{ xs: 13, sm: 13 }}>
+        <Row className={styles.features} gutter={{ xs: 13, sm: 72 }}>
           {features.slice(0, 3).map((row: FeatureType, index: number) => (
             <Col xs={24} sm={24} md={8} className={styles.feature}>
               <div className={styles.allFeaturesWrapper}>
-                <div>
-                  <img className={styles.featureImg} src={row.img} />
-                </div>
                 <div className={styles.featureTitle}>{row.title}</div>
                 <div className={styles.featureDesc}>{row.description}</div>
               </div>
             </Col>
           ))}
+        </Row>
+      </Fade>
+
+      <Fade direction="up" cascade triggerOnce>
+        <Row className={styles.tableRow} gutter={{ xs: 13, sm: 82 }}>
+          <Col span={8} className={styles.tableContentCol}>
+            <div className={styles.pageTitle}>The Unit as an Index</div>
+            <div className={styles.pageDesc}>
+              The Unit is the crypto equivalent of the S&P 500 in the stock
+              market. An index fund following The Unit saves masive amounts of
+              gas fees and aids investors to beat 95% of active fund managers.
+            </div>
+          </Col>
+          <Col span={16} className={styles.tableImgCol}>
+            <img src={table} />
+          </Col>
         </Row>
       </Fade>
 

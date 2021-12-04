@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Menu, Affix } from 'antd';
+import React from 'react';
+import { Menu, Row, Col } from 'antd';
 import { Link, useLocation } from 'umi';
 import logo from '@/assets/logo.png';
 import styles from './index.less';
@@ -12,142 +12,67 @@ import * as Links from '@/utils/links';
 const { SubMenu } = Menu;
 
 const Header: React.FC = () => {
-  const [top, setTop] = useState(0);
   const { pathname } = useLocation();
 
   var skeys: Array<string> = [];
   const path: string = pathname.substring(1);
-  if (
-    path.indexOf('about') > -1 ||
-    path.indexOf('glossary') > -1 ||
-    path.indexOf('faq') > -1 ||
-    path.indexOf('philosophy') > -1
-  ) {
+  if (path.indexOf('about') > -1 || path.indexOf('faq') > -1) {
     skeys.push('learn');
-  }
-  if (path.indexOf('announcements') > -1) {
-    skeys.push('community');
+  } else if (path.indexOf('road-map') > -1 || path.indexOf('jobs') > -1) {
+    skeys.push('developers');
   }
   skeys.push(path);
   skeys.push('english');
 
+  const menus = Links.menuLinks;
+
   return (
-    <Affix offsetTop={top}>
-      <div className={styles.header}>
-        <Link to="/">
-          <img alt="logo" className={styles.logo} src={logo} />
-        </Link>
+    <Row className={styles.topMenu} align="middle">
+      <Col span={6}>
+        <div className={styles.logoWrapper}>
+          <img className={styles.logoImg} src={logo} />
+          <Link to="/">
+            <span className={styles.logoText}>The Unit</span>
+          </Link>
+        </div>
+      </Col>
+      <Col span={18}>
         <Menu
           className={styles.pageMenu}
           mode="horizontal"
           selectedKeys={skeys}
         >
-          <SubMenu key="applications" title="Index">
-            <Menu.Item key="products:2">
-              <Link to={Links.appUrl}>
-                <span className="menu-item-span">Enter App</span>
-              </Link>
-            </Menu.Item>
-            <Menu.Item key="products:1">
-              <a href={Links.unitPaperUrl} target="_blank">
-                <span className="menu-item-span">White Paper</span>
-              </a>
-            </Menu.Item>
-            <Menu.Item key="products:4">
-              <a href={Links.graphUrl} target="_blank">
-                <span className="menu-item-span">The Unit API</span>
-              </a>
-            </Menu.Item>
-          </SubMenu>
-          <SubMenu key="developers" title="Developers">
-            <Menu.Item key="road-map">
-              <Link to="/road-map">
-                <span className="menu-item-span">Road Map</span>
-              </Link>
-            </Menu.Item>
-            <Menu.Item key="developers:1">
-              <a href={Links.docsUrl} target="_blank">
-                <span className="menu-item-span">Docs</span>
-              </a>
-            </Menu.Item>
-            <Menu.Item key="developers:2">
-              <a href={Links.githubUrl} target="_blank">
-                <span className="menu-item-span">Github</span>
-              </a>
-            </Menu.Item>
-            <Menu.Item key="developers:3">
-              <Link to="/jobs">
-                <span className="menu-item-span">Jobs</span>
-              </Link>
-            </Menu.Item>
-          </SubMenu>
-          <SubMenu key="learn" title="Learn">
-            <Menu.Item key="about">
-              <Link to="/about">
-                <span className="menu-item-span">About</span>
-              </Link>
-            </Menu.Item>
-            <Menu.Item key="faq">
-              <Link to="/faq">
-                <span className="menu-item-span">FAQ</span>
-              </Link>
-            </Menu.Item>
-          </SubMenu>
-          <SubMenu key="community" title="Community">
-            <Menu.Item key="community:1">
-              <a href={Links.twitterUrl} target="_blank">
-                <span className="menu-item-span">Twitter</span>
-              </a>
-            </Menu.Item>
-            <Menu.Item key="community:2">
-              <a href={Links.mediumUrl} target="_blank">
-                <span className="menu-item-span">Medium</span>
-              </a>
-            </Menu.Item>
-            <Menu.Item key="community:3">
-              <a href={Links.discordUrl} target="_blank">
-                <span className="menu-item-span">Discord</span>
-              </a>
-            </Menu.Item>
-            <Menu.Item key="community:4">
-              <a href={Links.forumUrl} target="_blank">
-                <span className="menu-item-span">Forum</span>
-              </a>
-            </Menu.Item>
-            <Menu.Item key="community:5">
-              <a href={Links.youtubeUrl} target="_blank">
-                <span className="menu-item-span">Youtube</span>
-              </a>
-            </Menu.Item>
-          </SubMenu>
-          <Menu.Item key="useApp">
-            <Link to="/app/index">
-              <ThemeButton>The Unit</ThemeButton>
-            </Link>
-          </Menu.Item>
-          {/* <Menu.Item key="connectWallet">
-          <ThemeButton  />
-        </Menu.Item> */}
-          <SubMenu
-            className="language-menu"
-            icon={<CustomIcon imgSrc={earthIcon} size={20} />}
-            key="language"
-            title="English"
-            popupClassName="language-popup"
-          >
-            <Menu.Item key="english">
-              <span className="menu-item-span">English</span>
-            </Menu.Item>
-            <Menu.Item key="chinese">
-              <span className="menu-item-span">Chinese</span>
-            </Menu.Item>
-            <Menu.Item key="spanish">
-              <span className="menu-item-span">Spanish</span>
-            </Menu.Item>
-          </SubMenu>
+          {menus.map((menu) => {
+            const key = menu.title.toLowerCase().replaceAll(' ', '');
+            return (
+              <SubMenu key={key} title={menu.title}>
+                {menu.links.map((link, index) => {
+                  return (
+                    <Menu.Item
+                      key={
+                        link.external
+                          ? `${key}:${index + 1}`
+                          : link.link.substring(1)
+                      }
+                    >
+                      {link.external ? (
+                        <a href={link.link} target="_blank">
+                          <span className="menu-item-span">{link.name}</span>
+                        </a>
+                      ) : (
+                        <Link to={link.link}>
+                          <span className="menu-item-span">{link.name}</span>
+                        </Link>
+                      )}
+                    </Menu.Item>
+                  );
+                })}
+              </SubMenu>
+            );
+          })}
         </Menu>
-      </div>
-    </Affix>
+      </Col>
+    </Row>
   );
 };
 

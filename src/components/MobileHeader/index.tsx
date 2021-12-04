@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link, withRouter, history, useLocation } from 'umi';
+import { Link, history } from 'umi';
 import { Popover, NavBar, Accordion, List } from 'antd-mobile';
 import logo from '@/assets/logo.png';
 import styles from './index.less';
@@ -12,24 +12,6 @@ import * as Links from '@/utils/links';
 const MobileHeader: React.FC = () => {
   const [visible, setVisible] = useState(false);
   const [langVisible, setLangVisible] = useState(false);
-
-  const { pathname } = useLocation();
-
-  var skeys: Array<string> = [];
-  const path: string = pathname.substring(1);
-  if (
-    path.indexOf('about') > -1 ||
-    path.indexOf('glossary') > -1 ||
-    path.indexOf('faq') > -1 ||
-    path.indexOf('philosophy') > -1
-  ) {
-    skeys.push('learn');
-  }
-  if (path.indexOf('announcements') > -1) {
-    skeys.push('community');
-  }
-  skeys.push(path);
-  skeys.push('english');
 
   const onSelect = (opt: any) => {
     setVisible(!visible);
@@ -49,6 +31,8 @@ const MobileHeader: React.FC = () => {
       history.push(link);
     }
   };
+
+  const menus = Links.menuLinks;
 
   return (
     <div>
@@ -97,8 +81,7 @@ const MobileHeader: React.FC = () => {
                 ]}
                 onVisibleChange={handleLangVisibleChange}
                 align={{
-                  overflow: { adjustY: 0, adjustX: 0 },
-                  offset: [0, 12],
+                  overflow: { adjustY: 12, adjustX: 0 },
                 }}
               >
                 <div className={styles.languageSwitcher}>
@@ -111,65 +94,25 @@ const MobileHeader: React.FC = () => {
       </div>
       <div className="mobile-submenu-wrapper">
         <Accordion className={'menu-accordion' + (visible ? ' show' : '')}>
-          <Accordion.Panel header="Index" className="pad">
-            <List className="my-list">
-              <List.Item onClick={() => onLinkTapped('/app/index')}>
-                The Unit
-              </List.Item>
-              <List.Item onClick={() => onLinkTapped(Links.unitPaperUrl)}>
-                The Unit White Paper
-              </List.Item>
-              <List.Item onClick={() => onLinkTapped('/app/swap')}>
-                Swap
-              </List.Item>
-            </List>
-          </Accordion.Panel>
-          <Accordion.Panel header="Developers" className="pad">
-            <List className="my-list">
-              <List.Item onClick={() => onLinkTapped('/road-map')}>
-                Road Map
-              </List.Item>
-              <List.Item onClick={() => onLinkTapped(Links.docsUrl)}>
-                Docs
-              </List.Item>
-              <List.Item onClick={() => onLinkTapped(Links.githubUrl)}>
-                Github
-              </List.Item>
-            </List>
-          </Accordion.Panel>
-          <Accordion.Panel header="Learn" className="pad">
-            <List className="my-list">
-              <List.Item onClick={() => onLinkTapped('/about')}>
-                About
-              </List.Item>
-              <List.Item onClick={() => onLinkTapped(Links.valuesUrl)}>
-                2ØY's Values
-              </List.Item>
-              <List.Item onClick={() => onLinkTapped('/glossary')}>
-                Glossary
-              </List.Item>
-              <List.Item onClick={() => onLinkTapped('/faq')}>FAQ</List.Item>
-            </List>
-          </Accordion.Panel>
-          <Accordion.Panel header="Community">
-            <List className="my-list">
-              <List.Item onClick={() => onLinkTapped('/announcements')}>
-                Announcements
-              </List.Item>
-              <List.Item onClick={() => onLinkTapped(Links.snapshotUrl)}>
-                Snapshot
-              </List.Item>
-              <List.Item onClick={() => onLinkTapped(Links.mediumUrl)}>
-                Medium
-              </List.Item>
-              <List.Item onClick={() => onLinkTapped(Links.discordUrl)}>
-                Discord
-              </List.Item>
-              <List.Item onClick={() => onLinkTapped(Links.forumUrl)}>
-                Forum
-              </List.Item>
-            </List>
-          </Accordion.Panel>
+          {menus.map((menu) => {
+            const key = menu.title.toLowerCase().replaceAll(' ', '');
+            return (
+              <Accordion.Panel header={menu.title} className="pad">
+                <List className="my-list">
+                  {menu.links.map((link) => {
+                    return (
+                      <List.Item
+                        key={link.link.substring(1)}
+                        onClick={() => onLinkTapped(link.link)}
+                      >
+                        {link.name}
+                      </List.Item>
+                    );
+                  })}
+                </List>
+              </Accordion.Panel>
+            );
+          })}
         </Accordion>
       </div>
     </div>

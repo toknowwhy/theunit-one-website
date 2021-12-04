@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { PageContainer } from '@ant-design/pro-layout';
 import styles from './About.less';
 import JoinCommunity from '@/components/JoinCommunity';
@@ -22,7 +22,7 @@ export default (): React.ReactNode => {
           capacity to become the Metaverse's unit of account.
         </div>
 
-        <div className={styles.aboutTitle} style={{ marginBottom: '60px' }}>
+        <div className={styles.aboutTitle} style={{ marginBottom: '40px' }}>
           Join Our Community
         </div>
         <JoinCommunity />
