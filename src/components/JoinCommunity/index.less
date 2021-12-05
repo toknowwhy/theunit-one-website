@@ -1,56 +1,21 @@
 @import '~themes/global.less';
 
-.communityImg {
-  img {
-    width: 100%;
-    margin: 0 auto;
-    display: block;
-    cursor: pointer;
-    padding: 15px;
-  }
-
-  img.activeSocial {
-    display: none;
-  }
-
-  &:hover {
-    img {
-      box-shadow: 0px 0px 16px 1px rgba(19, 27, 105, 0.08);
-      border-radius: 16px;
-
-      display: none;
-    }
-
-    img.activeSocial {
-      display: block;
-    }
-  }
+.title {
+  font-weight: 500;
+  font-size: 36px;
+  line-height: 49px;
+  margin-bottom: 72px;
+  text-align: center;
 }
 
-@media only screen and (max-width: 969px) {
-  .communityImg {
-    margin-bottom: 15px;
-    margin-top: 15px;
+.communityImg {
+  text-align: center;
+}
 
-    img {
-      width: 60%;
-    }
+.buttonImg {
+  width: 100%;
+}
 
-    img.activeSocial {
-      display: none;
-    }
-
-    &:hover {
-      img {
-        box-shadow: none;
-        border-radius: 0px;
-
-        display: block;
-      }
-
-      img.activeSocial {
-        display: none;
-      }
-    }
-  }
+.imgWrapper {
+  padding: 0 27px;
 }

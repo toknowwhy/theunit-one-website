@@ -10,6 +10,7 @@ import forum from '@/assets/forum-small.png';
 import logo from '@/assets/logo.png';
 import youtube from '@/assets/youtube-small.png';
 import * as Links from '@/utils/links';
+import JoinCommunity from '../JoinCommunity';
 
 const Footer: React.FC = () => {
   const menus = Links.menuLinks;
@@ -34,8 +35,10 @@ const Footer: React.FC = () => {
             </Col>
           );
         })}
+        <Col xs={24} sm={24} md={8}>
+          <JoinCommunity showButtons={false} showTitle={false} />
+        </Col>
       </Row>
-      <img className={styles.logoImg} src={logo} />
     </div>
   );
 };

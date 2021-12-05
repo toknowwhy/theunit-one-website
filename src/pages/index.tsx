@@ -9,6 +9,7 @@ import JoinCommunity from '@/components/JoinCommunity';
 import styles from './index.less';
 import enterApp from '@/assets/enter-app.svg';
 import table from '@/assets/table.png';
+import unitValue from '@/assets/unit-of-value.png';
 
 export default function IndexPage() {
   const features = getFeatures();
@@ -54,26 +55,38 @@ export default function IndexPage() {
       </Fade>
 
       <Fade direction="up" cascade triggerOnce>
-        <Row className={styles.tableRow} gutter={{ xs: 13, sm: 82 }}>
-          <Col span={8} className={styles.tableContentCol}>
-            <div className={styles.pageTitle}>The Unit as an Index</div>
-            <div className={styles.pageDesc}>
-              The Unit is the crypto equivalent of the S&P 500 in the stock
-              market. An index fund following The Unit saves masive amounts of
-              gas fees and aids investors to beat 95% of active fund managers.
-            </div>
-          </Col>
-          <Col span={16} className={styles.tableImgCol}>
-            <img src={table} />
-          </Col>
-        </Row>
+        <div className={styles.tableRowWrapper}>
+          <Row className={styles.tableRow} gutter={{ xs: 13, sm: 82 }}>
+            <Col span={9} className={styles.tableContentCol}>
+              <div className={styles.pageTitle}>The Unit as an Index</div>
+              <div className={styles.pageDesc}>
+                The Unit is the crypto equivalent of the S&P 500 in the stock
+                market. An index fund following The Unit saves masive amounts of
+                gas fees and aids investors to beat 95% of active fund managers.
+              </div>
+            </Col>
+            <Col span={15} className={styles.tableImgCol}>
+              <img src={table} />
+            </Col>
+          </Row>
+        </div>
       </Fade>
 
       <Fade direction="up" cascade triggerOnce>
-        <div className={styles.subtitle + ' ' + styles.communityTitle}>
-          Join Our Community
+        <div className={styles.unitValueWrapper}>
+          <img src={unitValue} />
+          <div className={styles.pageTitle}>The Unit as ONE Unit of Value</div>
+          <div className={styles.pageDesc}>
+            The crypto industry is becoming increasingly more fragmented. The
+            Unit unites all top cryptocurrencies into one simple unit of value.
+          </div>
         </div>
-        <JoinCommunity />
+      </Fade>
+
+      <Fade direction="up" cascade triggerOnce>
+        <div className={styles.joinWrapper}>
+          <JoinCommunity />
+        </div>
       </Fade>
     </PageContainer>
   );
