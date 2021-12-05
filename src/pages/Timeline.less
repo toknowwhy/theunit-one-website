@@ -35,7 +35,6 @@
     p {
       font-family: @dabacus-font-medium;
       width: 277px;
-      line-height: 19px;
       margin-top: 0;
       margin-bottom: 16px;
       position: relative;
@@ -46,7 +45,7 @@
         width: 4px;
         height: 4px;
         border-radius: 50%;
-        background: #000;
+        background: @text-color;
         position: absolute;
         top: 7px;
         left: 0;
@@ -61,14 +60,14 @@
 }
 
 .dot {
-  color: #70707c;
+  color: @theme-gray;
   cursor: pointer;
   margin: 120px 30px;
   display: inline-block;
   font-family: @dabacus-font-heavy;
 
   &.active {
-    color: #090909;
+    color: @text-color;
   }
 }
 

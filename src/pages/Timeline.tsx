@@ -80,8 +80,8 @@ export default (): React.ReactNode => {
   };
 
   return (
-    <PageContainer>
-      <div className={styles.title}>Road Map</div>
+    <PageContainer className={styles.pageContainer}>
+      <div className={styles.singlePageTitle}>Road Map</div>
       <AliceCarousel
         mouseTracking
         disableButtonsControls

@@ -1,12 +1,12 @@
 @import '~themes/global.less';
 
-.top {
+.homeTopWrapper {
   background-image: url(../assets/home-top-bgd.png);
   background-position-x: right;
-  background-position-y: bottom;
+  background-position-y: 0;
   background-repeat: no-repeat;
   background-size: 80%;
-  padding: 130px 0 120px 0;
+  padding: 130px 0 0 0;
 }
 
 .title {
@@ -41,7 +41,7 @@
   width: 100%;
   max-width: 514px;
   text-align: center;
-  margin: 150px auto;
+  margin: 230px auto 0 auto;
   font-size: 24px;
   line-height: 33px;
 }
@@ -54,14 +54,12 @@
   border-radius: 12px;
 }
 
-.features {
-  margin-top: 90px;
+.homeFeaturesWrapper {
   background-image: url(../assets/features-bgd.png);
-  background-size: contain;
-  background-position-y: bottom;
-  background-position-x: right;
+  background-size: 560px 560px;
+  background-position: 80%;
   background-repeat: no-repeat;
-  padding: 45px 0 195px 0;
+  padding: 135px 0 200px 0;
 }
 
 .featureTitle {
@@ -73,16 +71,30 @@
   margin-bottom: 40px;
 }
 
-.tableRow {
-  padding: 88px 88px 157px 88px;
-  background-image: url(../assets/table-bgd.png);
-  background-size: 100% 100%;
-  border-radius: 12px;
+.tableRowWrapper {
+  background-image: url(../assets/table-light.png);
+  background-size: contain;
+  background-position-x: -15%;
+  background-position-y: 85px;
+  background-repeat: no-repeat;
+  padding-bottom: 150px;
+
+  .tableRow {
+    background-image: url(../assets/table-row-bgd.png);
+    background-size: 100%;
+    padding: 88px 88px 157px 88px;
+    border-radius: 12px;
+  }
 
   .tableImgCol {
+    padding-left: 41px;
     img {
       width: 100%;
     }
+  }
+
+  .tableContentCol {
+    padding-right: 41px;
   }
 }
 
@@ -97,7 +109,7 @@
   width: 100%;
   max-width: 506px;
   text-align: center;
-  margin: 178px auto;
+  margin: 60px auto 228px auto;
 
   img {
     width: 160px;
@@ -106,4 +118,5 @@
 }
 
 .joinWrapper {
+  margin-bottom: 80px;
 }

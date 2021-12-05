@@ -34,73 +34,85 @@ export default (): React.ReactNode => {
   };
 
   return selectedJob ? (
-    <PageContainer>
-      <div className={styles.jobBody}>
-        <a
-          style={{ fontWeight: 700 }}
-          href="#"
-          onClick={() => {
-            setSelectedJob(undefined);
-          }}
-        >
-          <ArrowLeftOutlined /> Back to all jobs
-        </a>
-        <div className={styles.title}>{selectedJob.title}</div>
-        <div className={styles.jobDesc}>{descStr(selectedJob.description)}</div>
-        <div className={styles.jobTitle}>Responsibility</div>
-        <div className={styles.jobDesc}>
-          {descStr(selectedJob.responsibility)}
+    <PageContainer className={styles.pageContainerBgd}>
+      <div className={styles.pageContainer}>
+        <div className={styles.jobBody}>
+          <a
+            style={{ fontWeight: 700 }}
+            href="#"
+            onClick={() => {
+              setSelectedJob(undefined);
+            }}
+          >
+            <ArrowLeftOutlined /> Back to all jobs
+          </a>
+          <div className={styles.pageTitle}>{selectedJob.title}</div>
+          <div className={styles.jobDesc}>
+            {descStr(selectedJob.description)}
+          </div>
+          <div className={styles.jobTitle}>Responsibility</div>
+          <div className={styles.jobDesc}>
+            {descStr(selectedJob.responsibility)}
+          </div>
+          <div className={styles.jobTitle}>Requirement</div>
+          <div className={styles.jobDesc}>
+            {descStr(selectedJob.requirements)}
+          </div>
+          <div className={styles.jobTitle}>Apply</div>
+          Please send your resume/cv to
+          <a href="mailto:jobs@20y.org"> jobs@20y.org</a>
         </div>
-        <div className={styles.jobTitle}>Requirement</div>
-        <div className={styles.jobDesc}>
-          {descStr(selectedJob.requirements)}
-        </div>
-        <div className={styles.jobTitle}>Apply</div>
-        Please send your resume/cv to
-        <a href="mailto:jobs@20y.org"> jobs@20y.org</a>
       </div>
     </PageContainer>
   ) : (
-    <PageContainer>
-      <div
-        style={{ textAlign: 'center', fontSize: '48px' }}
-        className={styles.title}
-      >
-        Become A Revolutionary
+    <PageContainer className={styles.pageContainerBgd}>
+      <div className={styles.pageContainer}>
+        <div className={styles.topWrapper}>
+          <div
+            style={{
+              textAlign: 'center',
+              fontSize: '48px',
+              marginBottom: '88px',
+            }}
+            className={styles.title}
+          >
+            Become A Revolutionary
+          </div>
+
+          <div
+            style={{ textAlign: 'center', fontSize: '24px' }}
+            className={styles.singlePageTitle}
+          >
+            Open positions
+          </div>
+        </div>
+
+        {jobPosts && (
+          <Row className={styles.features} gutter={{ xs: 16, sm: 64 }}>
+            {jobPosts.map((row: JobPost, index: number) => {
+              const length = row.description?.length ?? 0;
+              var desc =
+                row.description?.substring(0, Math.min(length, 150)) ??
+                'Read more';
+              desc = desc.replaceAll('\\n', '');
+
+              return (
+                <Col xs={12} sm={12} md={8} className={styles.feature}>
+                  <div
+                    className={styles.featureWrapper}
+                    onClick={() => {
+                      setSelectedJob(row);
+                    }}
+                  >
+                    <div className={styles.featureTitle}>{row.title}</div>
+                    <div className={styles.featureDesc}>{desc + '...'}</div>
+                  </div>
+                </Col>
+              );
+            })}
+          </Row>
+        )}
       </div>
-
-      <div
-        style={{ textAlign: 'center', fontSize: '24px' }}
-        className={styles.title}
-      >
-        Open positions
-      </div>
-
-      {jobPosts && (
-        <Row className={styles.features}>
-          {jobPosts.map((row: JobPost, index: number) => {
-            const length = row.description?.length ?? 0;
-            var desc =
-              row.description?.substring(0, Math.min(length, 150)) ??
-              'Read more';
-            desc = desc.replaceAll('\\n', '');
-
-            return (
-              <Col xs={12} sm={12} md={8} className={styles.feature}>
-                <div
-                  className={styles.featureWrapper}
-                  onClick={() => {
-                    setSelectedJob(row);
-                  }}
-                >
-                  <div className={styles.featureTitle}>{row.title}</div>
-                  <div className={styles.featureDesc}>{desc + '...'}</div>
-                </div>
-              </Col>
-            );
-          })}
-        </Row>
-      )}
     </PageContainer>
   );
 };

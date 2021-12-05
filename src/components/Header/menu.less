@@ -8,7 +8,7 @@
 .ant-menu {
   background: none;
   line-height: 25px;
-  color: #70707c;
+  color: @theme-gray;
 }
 
 .ant-menu-horizontal {
@@ -18,7 +18,8 @@
 .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-active,
 .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu:hover,
 .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-active,
-.ant-menu-light .ant-menu-submenu-title:hover {
+.ant-menu-light .ant-menu-submenu-title:hover,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-selected {
   color: @text-color;
 }
 
@@ -34,7 +35,7 @@
 }
 
 .ant-menu-item a {
-  color: #70707c;
+  color: @theme-gray;
 
   &:hover {
     color: @text-color;
@@ -45,7 +46,8 @@
   color: @text-color;
 }
 
-.ant-menu-submenu-popup > .ant-menu {
+.ant-menu-submenu-popup > .ant-menu,
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
   background-color: transparent;
 }
 

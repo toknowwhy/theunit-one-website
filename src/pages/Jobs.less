@@ -1,11 +1,14 @@
 @import '~themes/global.less';
 
-.title {
+.title,
+.pageTitle {
   font-family: @dabacus-font-heavy;
   font-size: 36px;
   line-height: 36px;
-  margin-top: 88px;
-  margin-bottom: 64px;
+}
+
+.pageTitle {
+  margin: 88px 0;
 }
 
 .featureTitle,
@@ -19,12 +22,17 @@
 }
 .featureDesc {
   font-family: @dabacus-font-medium;
+  font-size: 14px;
+  line-height: 19px;
 }
 .feature {
   padding: 18px 28px;
 
   .featureWrapper {
-    padding: 32px;
+    padding: 64px;
+    background: #101011;
+    border-radius: 8px;
+    min-height: 268px;
 
     &:hover {
       box-shadow: 0px 0px 16px 1px rgba(19, 27, 105, 0.08);
@@ -37,6 +45,10 @@
 .jobBody {
   max-width: 824px;
   margin: 0 auto;
+}
+
+.topWrapper {
+  padding-top: 120px;
 }
 
 @media only screen and (max-width: 768px) {

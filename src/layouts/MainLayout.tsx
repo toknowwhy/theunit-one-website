@@ -4,7 +4,7 @@ import { Layout, Affix } from 'antd';
 import Header from '@/components/Header';
 import MobileHeader from '@/components/MobileHeader';
 import Footer from '@/components/Footer';
-import styles from './MainLayout.less';
+import './MainLayout.less';
 import { isMobile } from '@/utils/constants';
 
 const client = new ApolloClient({
@@ -17,13 +17,13 @@ const MainLayout: React.FC = ({ children }) => {
 
   return (
     <ApolloProvider client={client}>
-      <Layout className={styles.layout}>
+      <Layout className="layout">
         <Affix offsetTop={top}>
           <Layout.Header>
             {isMobile ? <MobileHeader /> : <Header />}
           </Layout.Header>
         </Affix>
-        <Layout.Content className={styles.container}>{children}</Layout.Content>
+        <Layout.Content className="container">{children}</Layout.Content>
         <Layout.Footer>
           <Footer />
         </Layout.Footer>
