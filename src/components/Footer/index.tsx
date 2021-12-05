@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
       <Row>
         {menus.map((menu) => {
           return (
-            <Col xs={12} sm={12} md={4}>
+            <Col xs={12} sm={12} md={4} className={styles.linkCol}>
               <div className={styles.footerTitle}>{menu.title}</div>
 
               {menu.links.map((link) => {
@@ -35,7 +35,7 @@ const Footer: React.FC = () => {
             </Col>
           );
         })}
-        <Col xs={24} sm={24} md={8}>
+        <Col xs={24} sm={24} md={8} className={styles.joinCol}>
           <JoinCommunity showButtons={false} showTitle={false} />
         </Col>
       </Row>

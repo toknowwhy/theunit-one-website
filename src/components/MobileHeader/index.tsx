@@ -49,45 +49,6 @@ const MobileHeader: React.FC = () => {
               <button onClick={onSelect} className={styles.menuButton}>
                 {visible ? <img src={closeIcon} /> : <img src={menuIcon} />}
               </button>
-
-              <Popover
-                mask={false}
-                visible={langVisible}
-                overlay={[
-                  <button
-                    className="lang-btn"
-                    onClick={() => {
-                      onLangSelected('en');
-                    }}
-                  >
-                    English
-                  </button>,
-                  <button
-                    className="lang-btn"
-                    onClick={() => {
-                      onLangSelected('zh');
-                    }}
-                  >
-                    Chinese
-                  </button>,
-                  <button
-                    className="lang-btn"
-                    onClick={() => {
-                      onLangSelected('sp');
-                    }}
-                  >
-                    Spanish
-                  </button>,
-                ]}
-                onVisibleChange={handleLangVisibleChange}
-                align={{
-                  overflow: { adjustY: 12, adjustX: 0 },
-                }}
-              >
-                <div className={styles.languageSwitcher}>
-                  <img width="18" src={earthIcon} /> English
-                </div>
-              </Popover>
             </div>
           }
         ></NavBar>

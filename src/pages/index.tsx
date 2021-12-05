@@ -65,7 +65,7 @@ export default function IndexPage() {
         <div className={styles.tableRowWrapper}>
           <div className={styles.pageContainer}>
             <Row className={styles.tableRow}>
-              <Col span={9} className={styles.tableContentCol}>
+              <Col xs={24} sm={24} md={9} className={styles.tableContentCol}>
                 <div className={styles.pageTitle}>The Unit as an Index</div>
                 <div className={styles.pageDesc}>
                   The Unit is the crypto equivalent of the S&P 500 in the stock
@@ -74,7 +74,7 @@ export default function IndexPage() {
                   managers.
                 </div>
               </Col>
-              <Col span={15} className={styles.tableImgCol}>
+              <Col xs={24} sm={24} md={15} className={styles.tableImgCol}>
                 <img src={table} />
               </Col>
             </Row>

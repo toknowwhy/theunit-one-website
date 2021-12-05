@@ -72,6 +72,7 @@ export default (): React.ReactNode => {
             style={{
               textAlign: 'center',
               fontSize: '48px',
+              lineHeight: '60px',
               marginBottom: '88px',
             }}
             className={styles.title}
@@ -97,7 +98,7 @@ export default (): React.ReactNode => {
               desc = desc.replaceAll('\\n', '');
 
               return (
-                <Col xs={12} sm={12} md={8} className={styles.feature}>
+                <Col xs={24} sm={12} md={8} className={styles.feature}>
                   <div
                     className={styles.featureWrapper}
                     onClick={() => {
