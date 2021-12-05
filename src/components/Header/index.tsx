@@ -1,12 +1,8 @@
 import React from 'react';
 import { Menu, Row, Col } from 'antd';
 import { Link, useLocation } from 'umi';
-import logo from '@/assets/logo.png';
 import styles from './index.less';
 import './menu.less';
-import ThemeButton from '../ThemeButton';
-import CustomIcon from '../CustomIcon';
-import earthIcon from '@/assets/ic_round-language.png';
 import * as Links from '@/utils/links';
 
 const { SubMenu } = Menu;
@@ -30,7 +26,7 @@ const Header: React.FC = () => {
     <Row className={styles.topMenu} align="middle">
       <Col span={6}>
         <div className={styles.logoWrapper}>
-          <img className={styles.logoImg} src={logo} />
+          <img className={styles.logoImg} src="/logo.png" />
           <Link to="/">
             <span className={styles.logoText}>The Unit</span>
           </Link>
@@ -70,6 +66,11 @@ const Header: React.FC = () => {
               </SubMenu>
             );
           })}
+          <Menu.Item>
+            <a href={Links.appUrl} className={styles.enterAppLink}>
+              Enter App
+            </a>
+          </Menu.Item>
         </Menu>
       </Col>
     </Row>

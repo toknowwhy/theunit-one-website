@@ -25,6 +25,7 @@ export default defineConfig({
     'font-size-base': '18px',
     'text-color': '#F5F5FF',
   },
+  favicon: '/logo.png',
   routes: [
     {
       path: '/',

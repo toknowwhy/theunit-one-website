@@ -3,12 +3,6 @@ import React from 'react';
 import styles from './index.less';
 import { Row, Col } from 'antd';
 import { Link } from 'umi';
-import discord from '@/assets/discord-black.png';
-import medium from '@/assets/medium-black.png';
-import twitter from '@/assets/twitter-small.png';
-import forum from '@/assets/forum-small.png';
-import logo from '@/assets/logo.png';
-import youtube from '@/assets/youtube-small.png';
 import * as Links from '@/utils/links';
 import JoinCommunity from '../JoinCommunity';
 

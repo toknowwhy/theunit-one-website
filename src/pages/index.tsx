@@ -34,7 +34,7 @@ export default function IndexPage() {
               </a>
             </Col>
             <Col xs={24} sm={24} md={14} className={styles.chart}>
-              <iframe src="http://localhost:8000/iframe" />
+              <iframe src="https://app.theunit.one/iframe" />
             </Col>
           </Row>
           <div className={styles.unitDesc}>

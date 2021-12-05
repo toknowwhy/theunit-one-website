@@ -1,11 +1,9 @@
 import React, { useState } from 'react';
 import { Link, history } from 'umi';
-import { Popover, NavBar, Accordion, List } from 'antd-mobile';
-import logo from '@/assets/logo.png';
+import { NavBar, Accordion, List } from 'antd-mobile';
 import styles from './index.less';
 import menuIcon from '@/assets/menu.png';
 import closeIcon from '@/assets/close.png';
-import earthIcon from '@/assets/ic_round-language.png';
 import './menu.less';
 import * as Links from '@/utils/links';
 
@@ -41,7 +39,7 @@ const MobileHeader: React.FC = () => {
           mode="light"
           leftContent={
             <Link to="/">
-              <img src={logo} className={styles.logo} />
+              <img src="/logo.png" className={styles.logo} />
             </Link>
           }
           rightContent={

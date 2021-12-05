@@ -9,9 +9,11 @@
   background: none;
   line-height: 25px;
   color: @theme-gray;
+  justify-content: end;
 }
 
-.ant-menu-horizontal {
+.ant-menu-horizontal,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item:hover::after {
   border-bottom: none;
 }
 
@@ -19,18 +21,21 @@
 .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu:hover,
 .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-active,
 .ant-menu-light .ant-menu-submenu-title:hover,
-.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-selected {
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-selected,
+.ant-menu-horizontal > .ant-menu-item a:hover {
   color: @text-color;
 }
 
 .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-active::after,
 .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu:hover::after,
-.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu::after {
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu::after,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item:hover::after {
   display: none;
 }
 
 .ant-menu-inline .ant-menu-item-selected::after,
-.ant-menu-horizontal .ant-menu-submenu {
+.ant-menu-horizontal .ant-menu-submenu,
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item:hover::after {
   border: none;
 }
 
