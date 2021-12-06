@@ -19,11 +19,17 @@ const Footer: React.FC = () => {
 
               {menu.links.map((link) => {
                 return link.external ? (
-                  <a target="_blank" href={link.link}>
+                  <a
+                    className={styles.footerLink}
+                    target="_blank"
+                    href={link.link}
+                  >
                     {link.name}
                   </a>
                 ) : (
-                  <Link to={link.link}>{link.name}</Link>
+                  <Link className={styles.footerLink} to={link.link}>
+                    {link.name}
+                  </Link>
                 );
               })}
             </Col>
