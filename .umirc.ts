@@ -18,6 +18,7 @@ export default defineConfig({
   antd: {
     dark: true,
   },
+  title: 'The Unit',
   theme: {
     'primary-color': '#5956FF',
     'body-background': '#000',

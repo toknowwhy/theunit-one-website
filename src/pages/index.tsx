@@ -18,7 +18,7 @@ export default function IndexPage() {
       <div className={styles.homeTopWrapper}>
         <div className={styles.pageContainer}>
           <Row className={styles.top} align="middle">
-            <Col xs={24} sm={24} md={10}>
+            <Col xs={24} sm={24} md={24} lg={10}>
               <div className={styles.title}>
                 <span className={styles.themeSpan}>The Unit</span> <br />
                 Crypto-Native
@@ -33,7 +33,7 @@ export default function IndexPage() {
                 <img src={enterApp} />
               </a>
             </Col>
-            <Col xs={24} sm={24} md={14} className={styles.chart}>
+            <Col xs={24} sm={24} md={24} lg={14} className={styles.chart}>
               <iframe src="https://app.theunit.one/iframe" />
             </Col>
           </Row>
@@ -64,7 +64,7 @@ export default function IndexPage() {
       <Fade direction="up" cascade triggerOnce>
         <div className={styles.tableRowWrapper}>
           <div className={styles.pageContainer}>
-            <Row className={styles.tableRow}>
+            <Row className={styles.tableRow} gutter={{ md: 32, lg: 32 }}>
               <Col xs={24} sm={24} md={9} className={styles.tableContentCol}>
                 <div className={styles.pageTitle}>The Unit as an Index</div>
                 <div className={styles.pageDesc}>
