@@ -101,4 +101,4 @@ export const timelines: Array<TimelineType> = [
   {},
 ];
 
-export const isMobile = window.innerWidth <= 1200;
+export const isMobile = window.innerWidth <= 991;

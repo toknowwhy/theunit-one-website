@@ -1,6 +1,8 @@
 @import '~themes/global.less';
 
-.ant-layout-header {
+.ant-layout-header,
+.ant-drawer-content,
+.ant-drawer-header {
   background: rgba(9, 9, 9, 0.6);
   backdrop-filter: blur(24px);
 }
@@ -90,4 +92,23 @@
 .ant-menu-submenu-popup > .ant-menu {
   box-shadow: none;
   border: none;
+}
+
+.ant-menu-inline {
+  border: none;
+}
+
+.ant-menu-submenu-title:active,
+.ant-menu-sub.ant-menu-inline {
+  background: none;
+}
+
+.ant-menu-submenu:hover > .ant-menu-submenu-title > .ant-menu-submenu-arrow {
+  color: @text-color;
+}
+
+@media only screen and (max-width: 991px) {
+  .ant-layout-header {
+    padding: 0 15px;
+  }
 }

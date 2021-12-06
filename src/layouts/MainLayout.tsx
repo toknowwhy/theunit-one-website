@@ -4,10 +4,8 @@ import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Inspector } from 'react-dev-inspector';
 import { Layout, Affix } from 'antd';
 import Header from '@/components/Header';
-import MobileHeader from '@/components/MobileHeader';
 import Footer from '@/components/Footer';
 import './MainLayout.less';
-import { isMobile } from '@/utils/constants';
 import { useLocation } from 'umi';
 
 const client = new ApolloClient({
@@ -41,7 +39,7 @@ const MainLayout: React.FC = ({ children }) => {
           <Layout className="layout">
             <Affix offsetTop={top}>
               <Layout.Header>
-                {isMobile ? <MobileHeader /> : <Header />}
+                <Header />
               </Layout.Header>
             </Affix>
             <Layout.Content className="container">{children}</Layout.Content>
