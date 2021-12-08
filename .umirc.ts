@@ -36,6 +36,7 @@ export default defineConfig({
         { path: '/about', component: '@/pages/About' },
         { path: '/faq', component: '@/pages/FAQ' },
         { path: '/jobs', component: '@/pages/Jobs' },
+        { path: '/jobs/:id', component: '@/pages/Job' },
         { path: '/road-map', component: '@/pages/Timeline' },
       ],
     },
