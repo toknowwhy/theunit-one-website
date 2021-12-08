@@ -19,6 +19,10 @@
   border-bottom: none;
 }
 
+.ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu {
+  padding: 0 40px;
+}
+
 .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu-active,
 .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu:hover,
 .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-item-active,
@@ -105,6 +109,12 @@
 
 .ant-menu-submenu:hover > .ant-menu-submenu-title > .ant-menu-submenu-arrow {
   color: @text-color;
+}
+
+@media only screen and (max-width: 1200px) {
+  .ant-menu-horizontal:not(.ant-menu-dark) > .ant-menu-submenu {
+    padding: 0 15px;
+  }
 }
 
 @media only screen and (max-width: 991px) {

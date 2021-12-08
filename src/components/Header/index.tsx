@@ -55,7 +55,7 @@ const Header: React.FC = () => {
 
   return (
     <Row className={styles.topMenu} align="middle">
-      <Col xs={18} sm={18} md={18} lg={6}>
+      <Col xs={18} sm={18} md={18} lg={4}>
         <div className={styles.logoWrapper}>
           <img className={styles.logoImg} src="/logo.png" />
           <Link to="/">
@@ -63,7 +63,7 @@ const Header: React.FC = () => {
           </Link>
         </div>
       </Col>
-      <Col xs={0} sm={0} md={0} lg={18}>
+      <Col xs={0} sm={0} md={0} lg={20}>
         <Menu
           className={styles.pageMenu}
           mode="horizontal"
