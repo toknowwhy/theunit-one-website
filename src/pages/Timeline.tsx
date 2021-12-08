@@ -17,7 +17,7 @@ export default (): React.ReactNode => {
 
   const { innerWidth } = window;
 
-  const years = ['2019', '2021', '2022', '2023'];
+  const years = ['2021', '2022', '2023'];
   var allItems = timelines;
   var showButtons = true;
   if (innerWidth < 1024) {
