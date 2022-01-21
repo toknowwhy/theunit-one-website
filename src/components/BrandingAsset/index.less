@@ -1,0 +1,51 @@
+@import '~themes/global.less';
+
+.download {
+  background-color: @theme-color;
+  border-radius: 8px;
+  padding: 10px 16px;
+  margin-top: 24px;
+  color: #fff;
+  display: inline-block;
+  font-size: 14px;
+
+  &:hover {
+    color: #f6f6f6;
+  }
+}
+
+.brandingWrapper {
+  display: inline-block;
+  margin-right: 100px;
+}
+
+.imageWrapperWhite,
+.imageWrapperBlack {
+  padding: 32px;
+  border-radius: 8px;
+
+  img {
+    width: 132px;
+
+    &.horizontal {
+      width: auto;
+      height: 96px;
+    }
+  }
+}
+
+.imageWrapperWhite {
+  background: rgba(10, 10, 10, 0.4);
+  backdrop-filter: blur(8px);
+}
+
+.imageWrapperBlack {
+  background: rgba(64, 64, 64, 0.4);
+  backdrop-filter: blur(8px);
+}
+
+@media only screen and (max-width: 768px) {
+  .download {
+    margin-bottom: 32px;
+  }
+}

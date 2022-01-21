@@ -44,6 +44,10 @@ export const menuLinks: Array<MenuType> = [
         link: unitPaperUrl,
         external: true,
       },
+      {
+        name: 'Brand Assets',
+        link: '/branding',
+      },
     ],
   },
   {

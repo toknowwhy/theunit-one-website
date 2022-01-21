@@ -38,6 +38,7 @@ export default defineConfig({
         { path: '/jobs', component: '@/pages/Jobs' },
         { path: '/jobs/:id', component: '@/pages/Job' },
         { path: '/road-map', component: '@/pages/Timeline' },
+        { path: '/branding', component: '@/pages/Branding' },
       ],
     },
   ],
