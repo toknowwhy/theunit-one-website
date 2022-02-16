@@ -9,7 +9,16 @@ import JoinCommunity from '@/components/JoinCommunity';
 import styles from './index.less';
 import enterApp from '@/assets/enter-app.svg';
 import table from '@/assets/table.png';
+import networksTop from '@/assets/networks-top.png';
+import networksBottom from '@/assets/networks-bottom.png';
+import attention from '@/assets/attention.png';
+import chainlink from '@/assets/chainlink.png';
+import cryptoyc from '@/assets/cryptoyc.png';
+import ens from '@/assets/ens.png';
+import thegraph from '@/assets/thegraph.png';
+import unstoppable from '@/assets/unstoppable.png';
 import unitValue from '@/assets/unit-of-value.png';
+import OurNetwork from '@/components/BrandingAsset';
 
 export default function IndexPage() {
   const features = getFeatures();
@@ -62,6 +71,23 @@ export default function IndexPage() {
       </Fade>
 
       <Fade direction="up" cascade triggerOnce>
+        <div className={styles.homeVideoWrapper}>
+          <div className={styles.pageContainer}>
+            <div className={styles.pageTitle}>Introducing The Unit</div>
+            <iframe
+              width="900"
+              height="506"
+              src="https://www.youtube.com/embed/VP1kvgJheR8?controls=0"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </Fade>
+
+      <Fade direction="up" cascade triggerOnce>
         <div className={styles.tableRowWrapper}>
           <div className={styles.pageContainer}>
             <Row className={styles.tableRow} gutter={{ md: 32, lg: 32 }}>
@@ -95,6 +121,37 @@ export default function IndexPage() {
               value.
             </div>
           </div>
+        </div>
+      </Fade>
+
+      <div className={styles.pageTitle}>Our Networks</div>
+
+      <Fade direction="up" cascade triggerOnce>
+        <div className={styles.networksWrapper}>
+          <img className={styles.networkImg} src={networksTop} />
+          <div className={styles.pageContainer}>
+            <Row>
+              <Col>
+                <OurNetwork image={chainlink} title="Chainlink" />{' '}
+              </Col>
+              <Col>
+                <OurNetwork image={ens} title="ENS" />{' '}
+              </Col>
+              <Col>
+                <OurNetwork image={thegraph} title="The Graph" />{' '}
+              </Col>
+              <Col>
+                <OurNetwork image={unstoppable} title="Unstoppable" />{' '}
+              </Col>
+              <Col>
+                <OurNetwork image={cryptoyc} title="CryptoYC" />{' '}
+              </Col>
+              <Col>
+                <OurNetwork image={attention} title="Attention Ventures" />{' '}
+              </Col>
+            </Row>
+          </div>
+          <img className={styles.networkImg} src={networksBottom} />
         </div>
       </Fade>
 
