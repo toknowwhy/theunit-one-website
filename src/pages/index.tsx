@@ -1,5 +1,4 @@
 import { PageContainer } from '@ant-design/pro-layout';
-import ThemeButton from '@/components/ThemeButton';
 import { Row, Col } from 'antd';
 import { Link } from 'umi';
 import { getFeatures, FeatureType } from '@/utils/constants';
@@ -18,7 +17,7 @@ import ens from '@/assets/ens.png';
 import thegraph from '@/assets/thegraph.png';
 import unstoppable from '@/assets/unstoppable.png';
 import unitValue from '@/assets/unit-of-value.png';
-import OurNetwork from '@/components/BrandingAsset';
+import OurNetwork from '@/components/Network';
 
 export default function IndexPage() {
   const features = getFeatures();
@@ -124,29 +123,31 @@ export default function IndexPage() {
         </div>
       </Fade>
 
-      <div className={styles.pageTitle}>Our Networks</div>
+      <div className={styles.pageTitle} style={{ textAlign: 'center' }}>
+        Our Networks
+      </div>
 
       <Fade direction="up" cascade triggerOnce>
         <div className={styles.networksWrapper}>
-          <img className={styles.networkImg} src={networksTop} />
+          <img className={styles.networkImgTop} src={networksTop} />
           <div className={styles.pageContainer}>
             <Row>
-              <Col>
+              <Col span={4}>
                 <OurNetwork image={chainlink} title="Chainlink" />{' '}
               </Col>
-              <Col>
+              <Col span={4}>
                 <OurNetwork image={ens} title="ENS" />{' '}
               </Col>
-              <Col>
+              <Col span={4}>
                 <OurNetwork image={thegraph} title="The Graph" />{' '}
               </Col>
-              <Col>
+              <Col span={4}>
                 <OurNetwork image={unstoppable} title="Unstoppable" />{' '}
               </Col>
-              <Col>
+              <Col span={4}>
                 <OurNetwork image={cryptoyc} title="CryptoYC" />{' '}
               </Col>
-              <Col>
+              <Col span={4}>
                 <OurNetwork image={attention} title="Attention Ventures" />{' '}
               </Col>
             </Row>
