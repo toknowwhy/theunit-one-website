@@ -18,6 +18,7 @@ import thegraph from '@/assets/thegraph.png';
 import unstoppable from '@/assets/unstoppable.png';
 import unitValue from '@/assets/unit-of-value.png';
 import OurNetwork from '@/components/Network';
+import BlogPost from '@/components/BlogPost';
 
 export default function IndexPage() {
   const features = getFeatures();
@@ -70,9 +71,41 @@ export default function IndexPage() {
       </Fade>
 
       <Fade direction="up" cascade triggerOnce>
+        <div className={styles.homeNumbersWrapper}>
+          <div className={styles.pageContainer}>
+            <Row>
+              <Col xs={24} sm={24} md={12}>
+                <div className={styles.numberWrapper}>
+                  <div className={styles.numberTitle}>
+                    Value Accounted in Unit
+                  </div>
+                  <div className={styles.number}>236,7288,1972,2910</div>
+                </div>
+              </Col>
+              <Col xs={24} sm={24} md={12}>
+                <div className={styles.numberWrapper}>
+                  <div className={styles.numberTitle}>
+                    Value Accounted in USD
+                  </div>
+                  <div className={styles.number}>236,7288,1972,2910</div>
+                </div>
+              </Col>
+            </Row>
+          </div>
+        </div>
+      </Fade>
+
+      <Fade direction="up" cascade triggerOnce>
         <div className={styles.homeVideoWrapper}>
           <div className={styles.pageContainer}>
             <div className={styles.pageTitle}>Introducing The Unit</div>
+            <div className={styles.unitValueWrapper}>
+              <div className={styles.pageDesc}>
+                The crypto industry is becoming increasingly more fragmented.
+                The Unit unites all top cryptocurrencies into one simple unit of
+                value.
+              </div>
+            </div>
             <iframe
               width="900"
               height="506"
@@ -108,17 +141,32 @@ export default function IndexPage() {
       </Fade>
 
       <Fade direction="up" cascade triggerOnce>
-        <div className={styles.unitValueWrapper}>
+        <div className={styles.homeBlogWrapper}>
           <div className={styles.pageContainer}>
-            <img src={unitValue} />
-            <div className={styles.pageTitle}>
-              The Unit as ONE Unit of Value
-            </div>
-            <div className={styles.pageDesc}>
-              The crypto industry is becoming increasingly more fragmented. The
-              Unit unites all top cryptocurrencies into one simple unit of
-              value.
-            </div>
+            <div className={styles.pageTitle}>From the Blog</div>
+            <Row gutter={{ sm: 15, md: 48, lg: 48 }}>
+              <Col xs={24} sm={8} md={8}>
+                <BlogPost
+                  image="https://miro.medium.com/max/1400/0*HsTKxhgEff1RyjTT"
+                  content="The Unit is the crypto benchmark. This article shows how The Unit index can help you make portfolio decisions. Technical analysts, traders, and crypto holders alike pay attention to what we are about to introduce to you. Rather than looking at USD charts, we created charts against The Unit, an index that tracks the most significant coins by capitalization and volume. As a result, we have created a unit of value called “unit” (Ø)."
+                  link="#"
+                />
+              </Col>
+              <Col xs={24} sm={8} md={8}>
+                <BlogPost
+                  image="https://miro.medium.com/max/1400/1*F-w_ZteVjN6clr4PG5CniA.png"
+                  content="The Unit is the crypto benchmark. This article shows how The Unit index can help you make portfolio decisions. Technical analysts, traders, and crypto holders alike pay attention to what we are about to introduce to you. Rather than looking at USD charts, we created charts against The Unit, an index that tracks the most significant coins by capitalization and volume. As a result, we have created a unit of value called “unit” (Ø)."
+                  link="#"
+                />
+              </Col>
+              <Col xs={24} sm={8} md={8}>
+                <BlogPost
+                  image="https://miro.medium.com/max/1400/0*HsTKxhgEff1RyjTT"
+                  content="The Unit is the crypto benchmark. This article shows how The Unit index can help you make portfolio decisions. Technical analysts, traders, and crypto holders alike pay attention to what we are about to introduce to you. Rather than looking at USD charts, we created charts against The Unit, an index that tracks the most significant coins by capitalization and volume. As a result, we have created a unit of value called “unit” (Ø)."
+                  link="#"
+                />
+              </Col>
+            </Row>
           </div>
         </div>
       </Fade>

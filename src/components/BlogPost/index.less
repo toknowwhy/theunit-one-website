@@ -1,0 +1,37 @@
+@import '~themes/global.less';
+
+.blogWrapper {
+  padding: 32px 24px 72px 24px;
+  cursor: pointer;
+
+  &:hover {
+    background: #101011;
+  }
+
+  .blogImg {
+    height: 220px;
+    width: 100%;
+    background-size: cover;
+    margin-bottom: 24px;
+    background-position: center;
+  }
+
+  .blogContent {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    line-clamp: 5;
+    -webkit-box-orient: vertical;
+    margin-bottom: 24px;
+  }
+
+  .readMore {
+    background: #1d1d1f;
+    border-radius: 8px;
+    color: #fff;
+    font-size: 14px;
+    padding: 10px 16px;
+    float: right;
+  }
+}
