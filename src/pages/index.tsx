@@ -1,7 +1,7 @@
 import { PageContainer } from '@ant-design/pro-layout';
 import { Row, Col } from 'antd';
 import { Link } from 'umi';
-import { getFeatures, FeatureType } from '@/utils/constants';
+import { getFeatures, FeatureType, blogs } from '@/utils/constants';
 import { Fade } from 'react-awesome-reveal';
 import { appUrl } from '@/utils/links';
 import JoinCommunity from '@/components/JoinCommunity';
@@ -16,7 +16,8 @@ import cryptoyc from '@/assets/cryptoyc.png';
 import ens from '@/assets/ens.png';
 import thegraph from '@/assets/thegraph.png';
 import unstoppable from '@/assets/unstoppable.png';
-import unitValue from '@/assets/unit-of-value.png';
+import tradingView from '@/assets/trading-view.png';
+import coinGecko from '@/assets/coingecko.png';
 import OurNetwork from '@/components/Network';
 import BlogPost from '@/components/BlogPost';
 
@@ -46,12 +47,35 @@ export default function IndexPage() {
               <iframe src="https://app.theunit.one/iframe" />
             </Col>
           </Row>
-          <div className={styles.unitDesc}>
-            The Unit is the decentralized, community-managed and crypto-native
-            benchmark for both consumers and investors in the metaverse.
-          </div>
+          <Row className={styles.homeNumbersWrapper}>
+            <Col xs={24} sm={24} md={12}>
+              <div className={styles.numberWrapper}>
+                <div className={styles.numberTitle}>
+                  Value Accounted in Unit
+                </div>
+                <div className={styles.number}>556,975,789,824</div>
+              </div>
+            </Col>
+            <Col xs={24} sm={24} md={12}>
+              <div className={styles.numberWrapper}>
+                <div className={styles.numberTitle}>Value Accounted in USD</div>
+                <div className={styles.number}>1,504,391,608,314</div>
+              </div>
+            </Col>
+          </Row>
         </div>
       </div>
+
+      <Fade direction="up" cascade triggerOnce>
+        <div className={styles.homeIntroWrapper}>
+          <div className={styles.pageContainer}>
+            <div className={styles.unitDesc}>
+              The Unit is the decentralized, community-managed and crypto-native
+              benchmark for both consumers and investors in the metaverse.
+            </div>
+          </div>
+        </div>
+      </Fade>
 
       <Fade direction="up" cascade triggerOnce>
         <div className={styles.homeFeaturesWrapper}>
@@ -65,31 +89,6 @@ export default function IndexPage() {
                   </div>
                 </Col>
               ))}
-            </Row>
-          </div>
-        </div>
-      </Fade>
-
-      <Fade direction="up" cascade triggerOnce>
-        <div className={styles.homeNumbersWrapper}>
-          <div className={styles.pageContainer}>
-            <Row>
-              <Col xs={24} sm={24} md={12}>
-                <div className={styles.numberWrapper}>
-                  <div className={styles.numberTitle}>
-                    Value Accounted in Unit
-                  </div>
-                  <div className={styles.number}>236,7288,1972,2910</div>
-                </div>
-              </Col>
-              <Col xs={24} sm={24} md={12}>
-                <div className={styles.numberWrapper}>
-                  <div className={styles.numberTitle}>
-                    Value Accounted in USD
-                  </div>
-                  <div className={styles.number}>236,7288,1972,2910</div>
-                </div>
-              </Col>
             </Row>
           </div>
         </div>
@@ -145,58 +144,56 @@ export default function IndexPage() {
           <div className={styles.pageContainer}>
             <div className={styles.pageTitle}>From the Blog</div>
             <Row gutter={{ sm: 15, md: 48, lg: 48 }}>
-              <Col xs={24} sm={8} md={8}>
-                <BlogPost
-                  image="https://miro.medium.com/max/1400/0*HsTKxhgEff1RyjTT"
-                  content="The Unit is the crypto benchmark. This article shows how The Unit index can help you make portfolio decisions. Technical analysts, traders, and crypto holders alike pay attention to what we are about to introduce to you. Rather than looking at USD charts, we created charts against The Unit, an index that tracks the most significant coins by capitalization and volume. As a result, we have created a unit of value called “unit” (Ø)."
-                  link="#"
-                />
-              </Col>
-              <Col xs={24} sm={8} md={8}>
-                <BlogPost
-                  image="https://miro.medium.com/max/1400/1*F-w_ZteVjN6clr4PG5CniA.png"
-                  content="The Unit is the crypto benchmark. This article shows how The Unit index can help you make portfolio decisions. Technical analysts, traders, and crypto holders alike pay attention to what we are about to introduce to you. Rather than looking at USD charts, we created charts against The Unit, an index that tracks the most significant coins by capitalization and volume. As a result, we have created a unit of value called “unit” (Ø)."
-                  link="#"
-                />
-              </Col>
-              <Col xs={24} sm={8} md={8}>
-                <BlogPost
-                  image="https://miro.medium.com/max/1400/0*HsTKxhgEff1RyjTT"
-                  content="The Unit is the crypto benchmark. This article shows how The Unit index can help you make portfolio decisions. Technical analysts, traders, and crypto holders alike pay attention to what we are about to introduce to you. Rather than looking at USD charts, we created charts against The Unit, an index that tracks the most significant coins by capitalization and volume. As a result, we have created a unit of value called “unit” (Ø)."
-                  link="#"
-                />
-              </Col>
+              {blogs.map((blog) => {
+                return (
+                  <Col xs={24} sm={8} md={8}>
+                    <BlogPost
+                      image={blog.image}
+                      content={blog.content}
+                      link={blog.link}
+                    />
+                  </Col>
+                );
+              })}
             </Row>
           </div>
         </div>
       </Fade>
 
       <div className={styles.pageTitle} style={{ textAlign: 'center' }}>
-        Our Networks
+        Our Network
       </div>
 
       <Fade direction="up" cascade triggerOnce>
         <div className={styles.networksWrapper}>
           <img className={styles.networkImgTop} src={networksTop} />
           <div className={styles.pageContainer}>
-            <Row>
-              <Col span={4}>
+            <Row style={{ marginBottom: '72px' }}>
+              <Col span={6}>
                 <OurNetwork image={chainlink} title="Chainlink" />{' '}
               </Col>
-              <Col span={4}>
+              <Col span={6}>
                 <OurNetwork image={ens} title="ENS" />{' '}
               </Col>
-              <Col span={4}>
+              <Col span={6}>
                 <OurNetwork image={thegraph} title="The Graph" />{' '}
               </Col>
-              <Col span={4}>
+              <Col span={6}>
                 <OurNetwork image={unstoppable} title="Unstoppable" />{' '}
               </Col>
-              <Col span={4}>
+            </Row>
+            <Row>
+              <Col span={6}>
                 <OurNetwork image={cryptoyc} title="CryptoYC" />{' '}
               </Col>
-              <Col span={4}>
+              <Col span={6}>
                 <OurNetwork image={attention} title="Attention Ventures" />{' '}
+              </Col>
+              <Col span={6}>
+                <OurNetwork image={tradingView} title="TradingView" />{' '}
+              </Col>
+              <Col span={6}>
+                <OurNetwork image={coinGecko} title="CoinGecko" />{' '}
               </Col>
             </Row>
           </div>

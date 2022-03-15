@@ -3,6 +3,8 @@
 .logoWrapper {
   line-height: 32px;
   font-size: 24px;
+  float: left;
+  padding: 15px;
 
   .logoImg {
     width: 32px;
@@ -12,7 +14,7 @@
 }
 
 .pageMenu {
-  float: right;
+  justify-content: end;
 }
 
 .logoText {
@@ -49,8 +51,21 @@
   width: 272px;
 }
 
+.mobileMenuWrapper {
+  display: none;
+}
+
 @media only screen and (max-width: 991px) {
   .topMenu {
     padding: 0;
+  }
+
+  .pageMenu {
+    display: none;
+  }
+
+  .mobileMenuWrapper {
+    float: right;
+    display: block;
   }
 }

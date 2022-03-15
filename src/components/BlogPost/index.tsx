@@ -9,16 +9,14 @@ interface BlogProps {
 
 const BlogPost: React.FC<BlogProps> = ({ image, content, link }) => {
   return (
-    <div className={styles.blogWrapper}>
+    <a href={link} target="_blank" className={styles.blogWrapper}>
       <div
         className={styles.blogImg}
         style={{ backgroundImage: `url(${image})` }}
       ></div>
       <div className={styles.blogContent}>{content}</div>
-      <a href={link} target="_blank" className={styles.readMore}>
-        Read More
-      </a>
-    </div>
+      <div className={styles.readMore}>Read More</div>
+    </a>
   );
 };
 

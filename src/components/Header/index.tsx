@@ -54,30 +54,22 @@ const Header: React.FC = () => {
   });
 
   return (
-    <Row className={styles.topMenu} align="middle">
-      <Col xs={18} sm={18} md={18} lg={4}>
-        <div className={styles.logoWrapper}>
-          <img className={styles.logoImg} src="/logo.png" />
-          <Link to="/">
-            <span className={styles.logoText}>The Unit</span>
-          </Link>
-        </div>
-      </Col>
-      <Col xs={0} sm={0} md={0} lg={20}>
-        <Menu
-          className={styles.pageMenu}
-          mode="horizontal"
-          selectedKeys={skeys}
-        >
-          {menus.map((menu) => menu)}
-          <Menu.Item>
-            <a href={Links.appUrl} className={styles.enterAppLink}>
-              Enter App
-            </a>
-          </Menu.Item>
-        </Menu>
-      </Col>
-      <Col xs={6} sm={6} md={6} lg={0}>
+    <div className={styles.headerWrapper}>
+      <div className={styles.logoWrapper}>
+        <img className={styles.logoImg} src="/logo.png" />
+        <Link to="/">
+          <span className={styles.logoText}>The Unit</span>
+        </Link>
+      </div>
+      <Menu className={styles.pageMenu} mode="horizontal" selectedKeys={skeys}>
+        {menus.map((menu) => menu)}
+        <Menu.Item>
+          <a href={Links.appUrl} className={styles.enterAppLink}>
+            Enter App
+          </a>
+        </Menu.Item>
+      </Menu>
+      <div className={styles.mobileMenuWrapper}>
         <div
           className={styles.menuIconWrapper}
           onClick={() => {
@@ -102,8 +94,8 @@ const Header: React.FC = () => {
             {menus.map((menu) => menu)}
           </Menu>
         </Drawer>
-      </Col>
-    </Row>
+      </div>
+    </div>
   );
 };
 
