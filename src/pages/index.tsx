@@ -1,7 +1,14 @@
 import { PageContainer } from '@ant-design/pro-layout';
 import { Row, Col } from 'antd';
 import { Link } from 'umi';
-import { getFeatures, FeatureType, blogs } from '@/utils/constants';
+import {
+  getFeatures,
+  FeatureType,
+  blogs,
+  averageLifeExpectancyInYears,
+  currentWorldPopulation,
+  unitInUsdDefault,
+} from '@/utils/constants';
 import { Fade } from 'react-awesome-reveal';
 import { appUrl } from '@/utils/links';
 import JoinCommunity from '@/components/JoinCommunity';
@@ -20,9 +27,21 @@ import tradingView from '@/assets/trading-view.png';
 import coinGecko from '@/assets/coingecko.png';
 import OurNetwork from '@/components/Network';
 import BlogPost from '@/components/BlogPost';
+import { useQuery } from '@apollo/client';
+import { UnitHourlyData, UNIT_IN_USD } from '@/utils/graphql';
+import { numberWithCommas } from '@/utils/numberWithCommas';
 
 export default function IndexPage() {
   const features = getFeatures();
+  var unitValueAccounted =
+    averageLifeExpectancyInYears * currentWorldPopulation;
+  var unitValueAccountedInUsd = unitValueAccounted * unitInUsdDefault;
+  const unitData = useQuery(UNIT_IN_USD);
+  const units: [UnitHourlyData] = unitData?.data?.unitHourlyData;
+  if (units) {
+    unitValueAccountedInUsd = units[0].value * unitValueAccounted;
+  }
+
   return (
     <PageContainer>
       <div className={styles.homeTopWrapper}>
@@ -53,13 +72,17 @@ export default function IndexPage() {
                 <div className={styles.numberTitle}>
                   Value Accounted in Unit
                 </div>
-                <div className={styles.number}>556,975,789,824</div>
+                <div className={styles.number}>
+                  {numberWithCommas(unitValueAccounted)}
+                </div>
               </div>
             </Col>
             <Col xs={24} sm={24} md={12}>
               <div className={styles.numberWrapper}>
                 <div className={styles.numberTitle}>Value Accounted in USD</div>
-                <div className={styles.number}>1,504,391,608,314</div>
+                <div className={styles.number}>
+                  {numberWithCommas(unitValueAccountedInUsd)}
+                </div>
               </div>
             </Col>
           </Row>

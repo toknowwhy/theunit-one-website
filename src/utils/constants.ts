@@ -1,5 +1,9 @@
 import { useIntl } from 'umi';
 
+export const currentWorldPopulation = 7673533972;
+export const averageLifeExpectancyInYears = 72.584;
+export const unitInUsdDefault = 2.5;
+
 export type FeatureType = {
   title: string;
   description: string;
