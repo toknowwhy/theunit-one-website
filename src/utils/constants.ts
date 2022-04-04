@@ -89,10 +89,10 @@ export const timelines: Array<TimelineType> = [
     events: ['Launch of The Unit DAO', 'DeFi partnerships', 'Seed round'],
   },
   {},
-  { time: '2022 - Q1', events: ['IDO'] },
+  {},
   {
     time: '2022 - Q2',
-    events: ['Synthetic UNIT farming', 'Puzzle games'],
+    events: ['Synthetic UNIT farming', 'Puzzle games', 'IDO'],
   },
   {
     time: '2022 - Q3',
