@@ -24,6 +24,7 @@ import ens from '@/assets/ens.png';
 import thegraph from '@/assets/thegraph.png';
 import unstoppable from '@/assets/unstoppable.png';
 import tradingView from '@/assets/trading-view.png';
+import homeTheme from '@/assets/home-theme.png';
 import coinGecko from '@/assets/coingecko.png';
 import OurNetwork from '@/components/Network';
 import BlogPost from '@/components/BlogPost';
@@ -63,7 +64,7 @@ export default function IndexPage() {
               </a>
             </Col>
             <Col xs={24} sm={24} md={24} lg={14} className={styles.chart}>
-              <iframe src="https://app.theunit.one/iframe" />
+              <img src={homeTheme} />
             </Col>
           </Row>
           <Row className={styles.homeNumbersWrapper}>
