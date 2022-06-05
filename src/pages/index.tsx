@@ -63,9 +63,6 @@ export default function IndexPage() {
                 <img src={enterApp} />
               </a>
             </Col>
-            <Col xs={24} sm={24} md={24} lg={14} className={styles.chart}>
-              <img src={homeTheme} />
-            </Col>
           </Row>
           <Row className={styles.homeNumbersWrapper}>
             <Col xs={24} sm={24} md={12}>

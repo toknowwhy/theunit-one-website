@@ -1,11 +1,10 @@
 @import '~themes/global.less';
 
 .homeTopWrapper {
-  background-image: url(../assets/home-top-bgd.png);
+  background-image: url(../assets/home-theme.png);
   background-position-x: right;
   background-position-y: -120px;
   background-repeat: no-repeat;
-  background-size: 80%;
   padding: 130px 0 0 0;
 }
 
@@ -176,7 +175,9 @@
 @media only screen and (max-width: 991px) {
   .homeTopWrapper {
     padding-top: 30px;
-    background-position-y: 0px;
+    background-position-y: -80px;
+    background-image: url(../assets/home-mobile-bgd.png);
+    background-size: cover;
   }
 
   .title {
