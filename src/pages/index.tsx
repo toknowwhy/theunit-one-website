@@ -127,8 +127,6 @@ export default function IndexPage() {
               </div>
             </div>
             <iframe
-              width="900"
-              height="506"
               src="https://www.youtube.com/embed/VP1kvgJheR8?controls=0"
               title="YouTube video player"
               frameborder="0"
