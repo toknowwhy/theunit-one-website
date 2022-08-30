@@ -22,11 +22,13 @@
   "dependencies": {
     "@ant-design/pro-layout": "^6.5.0",
     "@apollo/client": "^3.5.4",
+    "axios": "^0.27.2",
     "react": "17.x",
     "react-alice-carousel": "^2.5.1",
     "react-awesome-reveal": "^3.8.1",
     "react-dom": "17.x",
     "react-helmet-async": "^1.2.1",
+    "react-query": "^3.39.2",
     "umi": "^3.5.20"
   },
   "devDependencies": {

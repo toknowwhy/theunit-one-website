@@ -8,7 +8,7 @@ export default {
   'home.feature.open.desc':
     'The Unit will remain open for any participants to join its distributed governance. ',
   'home.feature.verifiable.desc':
-    'All code, data, and algorithms are entirely independently verifiable. The Unit, the ruler of the metaverse, relies solely on decentralized market data and strict rules.',
+    'All code, data, and algorithms are entirely independently verifiable. The Unit, the ruler of crypto, relies solely on decentralized market data and strict rules.',
   'home.feature.incorruptible.desc':
     'The Unit lives in the blockchain, where immutable, open, transparent data thrives.',
   'home.feature.scalable.desc':

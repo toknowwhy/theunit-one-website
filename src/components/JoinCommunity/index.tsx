@@ -90,6 +90,7 @@ const JoinCommunity: React.FC<CommunityProps> = ({
           };
           return (
             <Col
+              key={index}
               xs={{ span: !showButtons ? 4 : 24, offset: 0 }}
               sm={{ span: !showButtons ? 4 : 12, offset: 0 }}
               md={{ span: !showButtons ? 4 : 4, offset: index == 0 ? 2 : 0 }}

@@ -9,6 +9,13 @@ export type FeatureType = {
   description: string;
 };
 
+export type BlogType = {
+  title: string;
+  link: string;
+  content: string;
+  thumbnail: string;
+};
+
 export const getFeatures = () => {
   const intl = useIntl();
   return [
@@ -56,6 +63,10 @@ export const getFaqs = () => {
       answer: intl.formatMessage({ id: 'faq1Answer' }),
     },
     {
+      title: intl.formatMessage({ id: 'faq6Title' }),
+      answer: intl.formatMessage({ id: 'faq6Answer' }),
+    },
+    {
       title: intl.formatMessage({ id: 'faq2Title' }),
       answer: intl.formatMessage({ id: 'faq2Answer' }),
     },
@@ -82,26 +93,55 @@ export interface TimelineType {
 export const timelines: Array<TimelineType> = [
   {
     time: '2021 - Q2',
-    events: ['Launch of The Unit v0.1.0', 'Launch of theunit.one'],
+    events: [
+      'The Unit White Paper',
+      'Launch of The Unit v0.1.0',
+      'Launch of theunit.one',
+    ],
   },
+  {},
   {
     time: '2021 - Q4',
-    events: ['Launch of The Unit DAO', 'DeFi partnerships', 'Seed round'],
+    events: [
+      'Defi Proposals Partnerships with The Graph, Chainlink Expanding community',
+    ],
   },
-  {},
-  {},
+  {
+    time: '2022 - Q1',
+    events: [
+      'Grants from Aave Grants DAO, Near Foundation, and The Graph Foundation',
+      'Initial Airdrop',
+      'Started Prize Pools Deployment',
+    ],
+  },
   {
     time: '2022 - Q2',
-    events: ['Synthetic UNIT farming', 'Puzzle games', 'IDO'],
+    events: [
+      'Started UNIT (token) development',
+      'Prize Pools Beta on testnet ready',
+    ],
   },
   {
     time: '2022 - Q3',
-    events: ['Synthetic UNIT lending'],
+    events: [
+      'Testing of The Unit Prize Pools on Several Networks',
+      'Partnership with Technical Analysts',
+    ],
   },
-  {},
+  {
+    time: '2022 - Q4',
+    events: [
+      'Launch UNIT (token)',
+      'Partnership with centralized Exchanges and Data Hubs',
+      'IDO on decentralized exchanges',
+    ],
+  },
   {
     time: '2023 - Q1',
-    events: ['Launch of The Unit pools on multiple networks'],
+    events: [
+      'Launch of The Unit pools on multiple networks',
+      'Start of UNIT Lending',
+    ],
   },
   {},
 ];

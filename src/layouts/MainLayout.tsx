@@ -7,11 +7,14 @@ import Header from '@/components/Header';
 import Footer from '@/components/Footer';
 import './MainLayout.less';
 import { useLocation } from 'umi';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
 const client = new ApolloClient({
   uri: 'https://graph.theunit.one/graphql',
   cache: new InMemoryCache(),
 });
+
+const queryClient = new QueryClient();
 
 const InspectorWrapper =
   process.env.NODE_ENV === 'development' ? Inspector : React.Fragment;
@@ -36,17 +39,19 @@ const MainLayout: React.FC = ({ children }) => {
           <meta name="description" content="The Unit" />
         </Helmet>
         <ApolloProvider client={client}>
-          <Layout className="layout">
-            <Affix offsetTop={top}>
-              <Layout.Header>
-                <Header />
-              </Layout.Header>
-            </Affix>
-            <Layout.Content className="container">{children}</Layout.Content>
-            <Layout.Footer>
-              <Footer />
-            </Layout.Footer>
-          </Layout>
+          <QueryClientProvider client={queryClient}>
+            <Layout className="layout">
+              <Affix offsetTop={top}>
+                <Layout.Header>
+                  <Header />
+                </Layout.Header>
+              </Affix>
+              <Layout.Content className="container">{children}</Layout.Content>
+              <Layout.Footer>
+                <Footer />
+              </Layout.Footer>
+            </Layout>
+          </QueryClientProvider>
         </ApolloProvider>
       </HelmetProvider>
     </InspectorWrapper>

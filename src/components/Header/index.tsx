@@ -32,11 +32,7 @@ const Header: React.FC = () => {
       <SubMenu key={key} title={menu.title} popupOffset={[-3, -1]}>
         {menu.links.map((link, index) => {
           return (
-            <Menu.Item
-              key={
-                link.external ? `${key}:${index + 1}` : link.link.substring(1)
-              }
-            >
+            <Menu.Item key={link.name}>
               {link.external ? (
                 <a href={link.link} target="_blank">
                   <span className="menu-item-span">{link.name}</span>
@@ -63,7 +59,7 @@ const Header: React.FC = () => {
       </div>
       <Menu className={styles.pageMenu} mode="horizontal" selectedKeys={skeys}>
         {menus.map((menu) => menu)}
-        <Menu.Item>
+        <Menu.Item key={1}>
           <a href={Links.appUrl} className={styles.enterAppLink}>
             Enter App
           </a>

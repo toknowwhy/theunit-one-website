@@ -1,36 +1,34 @@
-import { PageContainer } from '@ant-design/pro-layout';
-import { Row, Col } from 'antd';
-import { Link } from 'umi';
-import {
-  getFeatures,
-  FeatureType,
-  blogs,
-  averageLifeExpectancyInYears,
-  currentWorldPopulation,
-  unitInUsdDefault,
-} from '@/utils/constants';
-import { Fade } from 'react-awesome-reveal';
-import { appUrl } from '@/utils/links';
-import JoinCommunity from '@/components/JoinCommunity';
-import styles from './index.less';
-import enterApp from '@/assets/enter-app.svg';
-import table from '@/assets/table.png';
-import networksTop from '@/assets/networks-top.png';
-import networksBottom from '@/assets/networks-bottom.png';
 import attention from '@/assets/attention.png';
 import chainlink from '@/assets/chainlink.png';
+import coinGecko from '@/assets/coingecko.png';
 import cryptoyc from '@/assets/cryptoyc.png';
 import ens from '@/assets/ens.png';
+import enterApp from '@/assets/enter-app.svg';
+import networksBottom from '@/assets/networks-bottom.png';
+import networksTop from '@/assets/networks-top.png';
+import table from '@/assets/table.png';
 import thegraph from '@/assets/thegraph.png';
-import unstoppable from '@/assets/unstoppable.png';
 import tradingView from '@/assets/trading-view.png';
-import homeTheme from '@/assets/home-theme.png';
-import coinGecko from '@/assets/coingecko.png';
-import OurNetwork from '@/components/Network';
+import unstoppable from '@/assets/unstoppable.png';
 import BlogPost from '@/components/BlogPost';
-import { useQuery } from '@apollo/client';
+import JoinCommunity from '@/components/JoinCommunity';
+import OurNetwork from '@/components/Network';
+import { useLatestBlogs } from '@/hooks/useLatestBlogs';
+import {
+  averageLifeExpectancyInYears,
+  currentWorldPopulation,
+  FeatureType,
+  getFeatures,
+  unitInUsdDefault,
+} from '@/utils/constants';
 import { UnitHourlyData, UNIT_IN_USD } from '@/utils/graphql';
+import { appUrl } from '@/utils/links';
 import { numberWithCommas } from '@/utils/numberWithCommas';
+import { PageContainer } from '@ant-design/pro-layout';
+import { useQuery } from '@apollo/client';
+import { Col, Row } from 'antd';
+import { Fade } from 'react-awesome-reveal';
+import styles from './index.less';
 
 export default function IndexPage() {
   const features = getFeatures();
@@ -43,6 +41,8 @@ export default function IndexPage() {
     unitValueAccountedInUsd = units[0].value * unitValueAccounted;
   }
 
+  const blogs = useLatestBlogs();
+
   return (
     <PageContainer>
       <div className={styles.homeTopWrapper}>
@@ -51,13 +51,13 @@ export default function IndexPage() {
             <Col xs={24} sm={24} md={24} lg={10}>
               <div className={styles.title}>
                 <span className={styles.themeSpan}>The Unit</span> <br />
-                Crypto-Native
+                Replace Dollar
                 <br />
-                Benchmark
+                Unite Crypto
               </div>
               <div className={styles.subtitle}>
-                USD is hyperinflating. Why does crypto still depend on USD as
-                benchmark?
+                UNIT is an unbiased unit of account built from a decentralized
+                index.
               </div>
               <a href={appUrl}>
                 <img src={enterApp} />
@@ -68,7 +68,7 @@ export default function IndexPage() {
             <Col xs={24} sm={24} md={12}>
               <div className={styles.numberWrapper}>
                 <div className={styles.numberTitle}>
-                  Value Accounted in Unit
+                  Value Accounted in UNIT
                 </div>
                 <div className={styles.number}>
                   {numberWithCommas(unitValueAccounted)}
@@ -78,7 +78,10 @@ export default function IndexPage() {
             <Col xs={24} sm={24} md={12}>
               <div className={styles.numberWrapper}>
                 <div className={styles.numberTitle}>Value Accounted in USD</div>
-                <div className={styles.number}>
+                <div
+                  className={styles.number}
+                  style={{ textDecoration: 'line-through' }}
+                >
                   {numberWithCommas(unitValueAccountedInUsd)}
                 </div>
               </div>
@@ -91,8 +94,11 @@ export default function IndexPage() {
         <div className={styles.homeIntroWrapper}>
           <div className={styles.pageContainer}>
             <div className={styles.unitDesc}>
-              The Unit is the decentralized, community-managed and crypto-native
-              benchmark for both consumers and investors in the metaverse.
+              The Unit is a set of cryptocurrencies coming from open selection
+              criteria and glued together through an open algorithm. <br />
+              <br />
+              It creates a unit of account based on this decentralized
+              crypto-native index. We call it UNIT (Ø).
             </div>
           </div>
         </div>
@@ -103,7 +109,13 @@ export default function IndexPage() {
           <div className={styles.pageContainer}>
             <Row className={styles.features} gutter={{ xs: 13, sm: 72 }}>
               {features.slice(0, 3).map((row: FeatureType, index: number) => (
-                <Col xs={24} sm={24} md={8} className={styles.feature}>
+                <Col
+                  key={index}
+                  xs={24}
+                  sm={24}
+                  md={8}
+                  className={styles.feature}
+                >
                   <div className={styles.allFeaturesWrapper}>
                     <div className={styles.featureTitle}>{row.title}</div>
                     <div className={styles.featureDesc}>{row.description}</div>
@@ -129,9 +141,9 @@ export default function IndexPage() {
             <iframe
               src="https://www.youtube.com/embed/VP1kvgJheR8?controls=0"
               title="YouTube video player"
-              frameborder="0"
+              frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
+              allowFullScreen
             ></iframe>
           </div>
         </div>
@@ -142,12 +154,16 @@ export default function IndexPage() {
           <div className={styles.pageContainer}>
             <Row className={styles.tableRow} gutter={{ md: 32, lg: 32 }}>
               <Col xs={24} sm={24} md={9} className={styles.tableContentCol}>
-                <div className={styles.pageTitle}>The Unit as an Index</div>
+                <div className={styles.pageTitle} style={{ textAlign: 'left' }}>
+                  The Unit as an Index
+                </div>
                 <div className={styles.pageDesc}>
-                  The Unit is the crypto equivalent of the S&P 500 in the stock
-                  market. An index fund following The Unit saves masive amounts
-                  of gas fees and aids investors to beat 95% of active fund
-                  managers.
+                  The Unit is much more than the crypto equivalent of the S&P
+                  500 in the stock market. The Unit is composed of a changing
+                  set of decentralized cryptocurrencies and produces UNIT (Ø),
+                  an index-based unit of account. Index funds following UNIT
+                  save in gas fees and aids investors in beating 95% of active
+                  fund managers.
                 </div>
               </Col>
               <Col xs={24} sm={24} md={15} className={styles.tableImgCol}>
@@ -163,14 +179,10 @@ export default function IndexPage() {
           <div className={styles.pageContainer}>
             <div className={styles.pageTitle}>From the Blog</div>
             <Row gutter={{ sm: 15, md: 48, lg: 48 }}>
-              {blogs.map((blog) => {
+              {blogs?.data?.map((blog, index) => {
                 return (
-                  <Col xs={24} sm={8} md={8}>
-                    <BlogPost
-                      image={blog.image}
-                      content={blog.content}
-                      link={blog.link}
-                    />
+                  <Col key={index} xs={24} sm={8} md={8}>
+                    <BlogPost blog={blog} />
                   </Col>
                 );
               })}
