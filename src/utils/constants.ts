@@ -103,7 +103,9 @@ export const timelines: Array<TimelineType> = [
   {
     time: '2021 - Q4',
     events: [
-      'Defi Proposals Partnerships with The Graph, Chainlink Expanding community',
+      'Defi Proposals',
+      'Partnerships with The Graph and Chainlink ',
+      'Expanding community',
     ],
   },
   {
