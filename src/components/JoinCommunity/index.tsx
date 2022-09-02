@@ -10,12 +10,9 @@ import mediumSmall from '@/assets/medium-small.png';
 import twitterSmall from '@/assets/twitter-small.png';
 import telegramSmall from '@/assets/telegram-small.png';
 import youtubeSmall from '@/assets/youtube-small.png';
-import watchUs from '@/assets/watch-now.png';
-import readNow from '@/assets/read-now.png';
-import followUs from '@/assets/follow-us.png';
-import joinUs from '@/assets/join-us.png';
 import * as Links from '@/utils/links';
 import styles from './index.less';
+import LineButton from '../LineButton';
 
 interface CommunityProps {
   showButtons?: boolean;
@@ -38,7 +35,7 @@ const JoinCommunity: React.FC<CommunityProps> = ({
   const socialLinks: Array<SocialMediaType> = [
     {
       logo: !showButtons ? mediumSmall : medium,
-      button: readNow,
+      button: 'Read Now',
       link: Links.mediumUrl,
       imgWidth: 63,
       margin: 36,
@@ -46,7 +43,7 @@ const JoinCommunity: React.FC<CommunityProps> = ({
     },
     {
       logo: !showButtons ? discordSmall : discord,
-      button: joinUs,
+      button: 'Join Us',
       link: Links.discordUrl,
       imgWidth: 44,
       margin: 29,
@@ -54,7 +51,7 @@ const JoinCommunity: React.FC<CommunityProps> = ({
     },
     {
       logo: !showButtons ? twitterSmall : twitter,
-      button: followUs,
+      button: 'Follow Us',
       link: Links.twitterUrl,
       imgWidth: 51,
       margin: 33,
@@ -62,7 +59,7 @@ const JoinCommunity: React.FC<CommunityProps> = ({
     },
     {
       logo: !showButtons ? telegramSmall : telegram,
-      button: joinUs,
+      button: 'Join Us',
       link: Links.telegramUrl,
       imgWidth: 44,
       margin: 33,
@@ -70,7 +67,7 @@ const JoinCommunity: React.FC<CommunityProps> = ({
     },
     {
       logo: !showButtons ? youtubeSmall : youtube,
-      button: watchUs,
+      button: 'Watch Now',
       link: Links.youtubeUrl,
       imgWidth: 46,
       margin: 35,
@@ -81,7 +78,7 @@ const JoinCommunity: React.FC<CommunityProps> = ({
   return (
     <>
       {showTitle && <div className={styles.title}>Join Our Community</div>}
-      <Row gutter={{ xs: 13, sm: 64 }}>
+      <Row gutter={{ xs: 13, sm: 36 }}>
         {socialLinks.map((link, index) => {
           const imgStyle = {
             width: !showButtons ? '48px' : `${link.imgWidth}px`,
@@ -102,9 +99,7 @@ const JoinCommunity: React.FC<CommunityProps> = ({
                   className={styles.logoImg}
                   src={link.logo}
                 />
-                {showButtons && (
-                  <img className={styles.buttonImg} src={link.button} />
-                )}
+                {showButtons && <LineButton small>{link.button}</LineButton>}
               </a>
             </Col>
           );

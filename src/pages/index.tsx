@@ -1,3 +1,4 @@
+import Spline from '@splinetool/react-spline';
 import attention from '@/assets/attention.png';
 import chainlink from '@/assets/chainlink.png';
 import coinGecko from '@/assets/coingecko.png';
@@ -12,6 +13,7 @@ import tradingView from '@/assets/trading-view.png';
 import unstoppable from '@/assets/unstoppable.png';
 import BlogPost from '@/components/BlogPost';
 import JoinCommunity from '@/components/JoinCommunity';
+import LineButton from '@/components/LineButton';
 import OurNetwork from '@/components/Network';
 import { useLatestBlogs } from '@/hooks/useLatestBlogs';
 import {
@@ -28,6 +30,7 @@ import { PageContainer } from '@ant-design/pro-layout';
 import { useQuery } from '@apollo/client';
 import { Col, Row } from 'antd';
 import { Fade } from 'react-awesome-reveal';
+import EnterAppIcon from '@/assets/enter-app.png';
 import styles from './index.less';
 
 export default function IndexPage() {
@@ -60,7 +63,11 @@ export default function IndexPage() {
                 index.
               </div>
               <a href={appUrl}>
-                <img src={enterApp} />
+                <LineButton>
+                  EnterApp
+                  <img className={styles.enterAppIcon} src={EnterAppIcon} />
+                  <img className={styles.enterAppIcon} src={EnterAppIcon} />
+                </LineButton>
               </a>
             </Col>
           </Row>
@@ -92,7 +99,7 @@ export default function IndexPage() {
 
       <Fade direction="up" cascade triggerOnce>
         <div className={styles.homeIntroWrapper}>
-          <div className={styles.pageContainer}>
+          <div className={styles.pageContainer} style={{ paddingBottom: '0' }}>
             <div className={styles.unitDesc}>
               The Unit is a set of cryptocurrencies coming from open selection
               criteria and glued together through an open algorithm. <br />
@@ -148,6 +155,8 @@ export default function IndexPage() {
           </div>
         </div>
       </Fade>
+
+      <Spline scene="https://prod.spline.design/noP1fbdLdVrd-p58/scene.splinecode" />
 
       <Fade direction="up" cascade triggerOnce>
         <div className={styles.tableRowWrapper}>

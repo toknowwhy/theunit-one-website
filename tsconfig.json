@@ -9,6 +9,7 @@
     "esModuleInterop": true,
     "sourceMap": true,
     "baseUrl": "./",
+    "allowJs": true,
     "strict": true,
     "paths": {
       "@/*": ["src/*"],
@@ -21,7 +22,9 @@
     "src/**/*",
     "config/**/*",
     ".umirc.ts",
-    "typings.d.ts"
+    "typings.d.ts",
+    "**/*.js",
+    "**/*.jsx"
   ],
   "exclude": [
     "node_modules",

@@ -97,11 +97,15 @@
 }
 
 .homeFeaturesWrapper {
-  background-image: url(../assets/features-bgd.png);
-  background-size: 560px 560px;
-  background-position: 80%;
-  background-repeat: no-repeat;
-  padding: 135px 0 150px 0;
+  background-image: url(../assets/BG.png);
+  background-size: cover;
+  padding: 285px 0 150px 0;
+  .pageContainer {
+    background-image: url(../assets/features-bgd.png);
+    background-position: right bottom;
+    background-repeat: no-repeat;
+    background-size: 552px 549px;
+  }
 }
 
 .featureTitle {
@@ -166,6 +170,12 @@
   background-repeat: no-repeat;
   background-size: contain;
   background-position: right bottom;
+}
+
+.enterAppIcon {
+  width: 11px;
+  margin-left: 8px;
+  margin-top: -3px;
 }
 
 @media only screen and (max-width: 991px) {

@@ -22,6 +22,7 @@
   "dependencies": {
     "@ant-design/pro-layout": "^6.5.0",
     "@apollo/client": "^3.5.4",
+    "@splinetool/react-spline": "^2.2.1",
     "axios": "^0.27.2",
     "react": "17.x",
     "react-alice-carousel": "^2.5.1",
@@ -29,9 +30,12 @@
     "react-dom": "17.x",
     "react-helmet-async": "^1.2.1",
     "react-query": "^3.39.2",
+    "react-scripts": "^4.0.0",
     "umi": "^3.5.20"
   },
   "devDependencies": {
+    "@babel/runtime": "7.13.8",
+    "@umijs/babel-preset-umi": "^4.0.15",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@umijs/preset-react": "1.x",
